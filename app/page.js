@@ -152,8 +152,8 @@ export default function PortfolioWebsite() {
               Services
             </a>
 
-            <a href="#about" className="hover:text-cyan-400 transition">
-              About
+            <a href="#team" className="hover:text-cyan-400 transition">
+              Team
             </a>
 
             <a href="#contact" className="hover:text-cyan-400 transition">
@@ -169,14 +169,10 @@ export default function PortfolioWebsite() {
       {/* Hero Section */}
       <section className="relative px-6 md:px-16 pt-24 pb-32 overflow-hidden">
 
-        {/* Background Grid */}
+        {/* Grid */}
         <div className="absolute inset-0 opacity-[0.04]">
 
-          <svg
-            width="100%"
-            height="100%"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
 
             <defs>
 
@@ -233,14 +229,13 @@ export default function PortfolioWebsite() {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left Content */}
+            {/* Left */}
             <motion.div
               initial={{ opacity: 0, x: -80 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
             >
 
-              {/* Trust Badge */}
               <motion.div
                 animate={{
                   y: [0, -6, 0],
@@ -258,7 +253,6 @@ export default function PortfolioWebsite() {
 
               </motion.div>
 
-              {/* Heading */}
               <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
 
                 Helping Businesses
@@ -271,16 +265,15 @@ export default function PortfolioWebsite() {
 
               </h1>
 
-              {/* Description */}
               <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
 
                 I build modern websites, scalable applications,
                 SEO systems and digital growth solutions that help
-                businesses attract customers, improve trust and grow faster online.
+                businesses attract customers and grow faster online.
 
               </p>
 
-              {/* CTA */}
+              {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-5 mb-12">
 
                 <motion.button
@@ -288,10 +281,7 @@ export default function PortfolioWebsite() {
                     scale: 1.05,
                     y: -5,
                   }}
-                  whileTap={{
-                    scale: 0.95,
-                  }}
-                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2"
                 >
 
                   View My Work
@@ -305,9 +295,6 @@ export default function PortfolioWebsite() {
                     scale: 1.05,
                     y: -5,
                   }}
-                  whileTap={{
-                    scale: 0.95,
-                  }}
                   className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 backdrop-blur-xl"
                 >
 
@@ -317,64 +304,99 @@ export default function PortfolioWebsite() {
 
               </div>
 
-              {/* Metrics */}
-              <div className="grid grid-cols-3 gap-6">
+              {/* Reviews */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 1 }}
+                className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-12"
+              >
 
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
-                >
+                {[
+                  {
+                    initials: "RK",
+                    name: "Rahul Kumar",
+                    stars: "★★★★★",
+                    review: "Very professional website and fast delivery.",
+                    color: "from-cyan-400 to-blue-500",
+                  },
 
-                  <h3 className="text-3xl font-black text-cyan-400 mb-2">
-                    10+
-                  </h3>
+                  {
+                    initials: "AP",
+                    name: "Amit Patel",
+                    stars: "★★★★☆",
+                    review: "SEO and marketing service was excellent.",
+                    color: "from-purple-400 to-pink-500",
+                  },
 
-                  <p className="text-white/60 text-sm">
-                    Digital Solutions
-                  </p>
+                  {
+                    initials: "VS",
+                    name: "Vikash Singh",
+                    stars: "★★★★★",
+                    review: "Amazing communication and premium work.",
+                    color: "from-green-400 to-emerald-500",
+                  },
 
-                </motion.div>
+                  {
+                    initials: "SN",
+                    name: "Sandeep Nair",
+                    stars: "★★★★★",
+                    review: "Modern design improved my business trust.",
+                    color: "from-orange-400 to-red-500",
+                  },
 
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
-                >
+                  {
+                    initials: "MJ",
+                    name: "Manish Joshi",
+                    stars: "★★★★☆",
+                    review: "Professional support throughout project.",
+                    color: "from-yellow-400 to-amber-500",
+                  },
+                ].map((item, index) => (
 
-                  <h3 className="text-3xl font-black text-purple-400 mb-2">
-                    24/7
-                  </h3>
+                  <motion.div
+                    key={index}
+                    whileHover={{ y: -5 }}
+                    className="p-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl"
+                  >
 
-                  <p className="text-white/60 text-sm">
-                    Support
-                  </p>
+                    <div className="flex items-center gap-4 mb-4">
 
-                </motion.div>
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center font-bold text-black`}>
+                        {item.initials}
+                      </div>
 
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
-                >
+                      <div>
 
-                  <h3 className="text-3xl font-black text-cyan-400 mb-2">
-                    Fast
-                  </h3>
+                        <h4 className="font-semibold">
+                          {item.name}
+                        </h4>
 
-                  <p className="text-white/60 text-sm">
-                    Delivery
-                  </p>
+                        <div className="flex text-yellow-400 text-sm">
+                          {item.stars}
+                        </div>
 
-                </motion.div>
+                      </div>
 
-              </div>
+                    </div>
+
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      “{item.review}”
+                    </p>
+
+                  </motion.div>
+
+                ))}
+
+              </motion.div>
 
             </motion.div>
 
-            {/* Right UI Card */}
+            {/* Right Card */}
             <motion.div
               initial={{ opacity: 0, x: 80 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              className="relative"
             >
 
               <motion.div
@@ -385,10 +407,9 @@ export default function PortfolioWebsite() {
                   duration: 5,
                   repeat: Infinity,
                 }}
-                className="relative rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-2xl p-8 shadow-[0_0_60px_rgba(34,211,238,0.15)]"
+                className="rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-2xl p-8 shadow-[0_0_60px_rgba(34,211,238,0.15)]"
               >
 
-                {/* Browser Top */}
                 <div className="flex items-center gap-2 mb-8">
 
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -397,7 +418,6 @@ export default function PortfolioWebsite() {
 
                 </div>
 
-                {/* Dashboard */}
                 <div className="space-y-6">
 
                   <div className="p-6 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/20">
@@ -424,44 +444,6 @@ export default function PortfolioWebsite() {
                       />
 
                     </div>
-
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-5">
-
-                    <motion.div
-                      whileHover={{ scale: 1.03 }}
-                      className="p-6 rounded-3xl bg-white/5 border border-white/10"
-                    >
-
-                      <Code2 className="text-cyan-400 mb-4" />
-
-                      <h3 className="font-bold text-lg mb-2">
-                        Development
-                      </h3>
-
-                      <p className="text-white/60 text-sm">
-                        Websites & Apps
-                      </p>
-
-                    </motion.div>
-
-                    <motion.div
-                      whileHover={{ scale: 1.03 }}
-                      className="p-6 rounded-3xl bg-white/5 border border-white/10"
-                    >
-
-                      <Search className="text-purple-400 mb-4" />
-
-                      <h3 className="font-bold text-lg mb-2">
-                        SEO Growth
-                      </h3>
-
-                      <p className="text-white/60 text-sm">
-                        Better Visibility
-                      </p>
-
-                    </motion.div>
 
                   </div>
 
@@ -528,6 +510,112 @@ export default function PortfolioWebsite() {
 
                 <p className="text-white/70 leading-relaxed">
                   {service.desc}
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </motion.div>
+
+      </section>
+
+      {/* Team Section */}
+      <section
+        id="team"
+        className="px-6 md:px-16 py-24 border-t border-white/10"
+      >
+
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="max-w-7xl mx-auto"
+        >
+
+          <div className="text-center mb-16">
+
+            <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
+              Our Team
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-black mb-6">
+              Meet The Team
+            </h2>
+
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              A passionate digital team focused on building modern
+              business solutions and premium online experiences.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {[
+              {
+                initial: "A",
+                name: "Aneesh Kumar",
+                role: "Founder & Developer",
+                desc: "Focused on websites and digital systems.",
+                color: "from-cyan-400 to-blue-500",
+              },
+
+              {
+                initial: "R",
+                name: "राहुल शर्मा",
+                role: "SEO Specialist",
+                desc: "Improving search visibility and growth.",
+                color: "from-purple-400 to-pink-500",
+              },
+
+              {
+                initial: "V",
+                name: "विकाश सिंह",
+                role: "Marketing Manager",
+                desc: "Managing branding and digital campaigns.",
+                color: "from-green-400 to-emerald-500",
+              },
+
+              {
+                initial: "A",
+                name: "अमित पटेल",
+                role: "UI/UX Designer",
+                desc: "Designing premium digital experiences.",
+                color: "from-yellow-400 to-orange-500",
+              },
+            ].map((member, index) => (
+
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                  scale: 1.03,
+                }}
+                className="group p-6 rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition duration-500"
+              >
+
+                <div className={`w-24 h-24 rounded-full bg-gradient-to-r ${member.color} p-[2px] mx-auto mb-6`}>
+
+                  <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-3xl font-black">
+                    {member.initial}
+                  </div>
+
+                </div>
+
+                <h3 className="text-2xl font-bold text-center mb-2">
+                  {member.name}
+                </h3>
+
+                <p className="text-cyan-400 text-center mb-5">
+                  {member.role}
+                </p>
+
+                <p className="text-white/60 text-sm text-center leading-relaxed">
+                  {member.desc}
                 </p>
 
               </motion.div>
