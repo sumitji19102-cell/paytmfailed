@@ -24,8 +24,8 @@ export default function MerchantScreen() {
       <div className="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-[390px] bg-[#F5F5F5] rounded-[26px] px-5 pt-16 pb-7 shadow-sm">
         
         {/* Icon Circle */}
-        <div className="absolute -top-12 left-1/2 -translate-x-1/2">
-          <div className="w-[92px] h-[92px] rounded-full bg-[#E7F4FA] border border-[#DDEAF0] flex items-center justify-center">
+        <div className="absolute -top-8 left-1/2 -translate-x-1/2">
+          <div className="w-[70px] h-[70px] rounded-full bg-[#E7F4FA] border border-[#DDEAF0] flex items-center justify-center">
             
             {/* Milk Icon */}
             <svg
@@ -58,25 +58,25 @@ export default function MerchantScreen() {
         </div>
 
         {/* UPI ID */}
-        <h1 className="text-center text-[27px] font-semibold text-[#1B1B1B] tracking-[-0.3px]">
+        <h1 className="text-center text-[18px] font-semibold text-[#1B1B1B] ">
           7070100669@myapgb
         </h1>
 
         {/* Business Box */}
-        <div className="mt-8 bg-[#E8EDF3] rounded-[22px] py-5 px-4 text-center border border-[#E0E6EC]">
-          <p className="text-[20px] font-medium text-[#7B7B7B]">
+        <div className="mt-3 bg-[#E8EDF3] rounded-[22px] py-3 px-4 text-center border border-[#E0E6EC]">
+          <p className="text-[17px] font-medium text-[#7B7B7B]">
             Business Name
           </p>
 
-          <h2 className="text-[25px] leading-[34px] font-semibold text-[#111111] mt-1">
+          <h2 className="text-[18px] leading-[34px] font-semibold text-[#111111] mt-1">
             Shaik Meeravali
           </h2>
         </div>
       </div>
 
       {/* Bottom Text */}
-      <div className="absolute bottom-[165px] left-1/2 -translate-x-1/2 w-[90%] max-w-[420px] text-center">
-        <p className="text-[18px] leading-[28px] font-medium text-[#3D3D3D]">
+      <div className="absolute bottom-[310px] left-1/2 -translate-x-1/2 w-[90%] max-w-[420px] text-center">
+        <p className="text-[13px] leading-[18px] font-medium text-[#3D3D3D]">
           This merchant receives money through payment requests. To
           pay again, please visit their app/website.
         </p>
