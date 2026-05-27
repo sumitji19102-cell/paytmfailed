@@ -1,65 +1,86 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function MerchantScreen() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="w-full h-screen bg-[#ECECEC] relative overflow-hidden font-sans">
+      
+      {/* Back Button */}
+      <div className="absolute top-6 left-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2.2}
+          stroke="currentColor"
+          className="w-7 h-7 text-[#1D1D1D]"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+      </div>
+
+      {/* Main Card */}
+      <div className="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-[390px] bg-[#F5F5F5] rounded-[26px] px-5 pt-16 pb-7 shadow-sm">
+        
+        {/* Icon Circle */}
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2">
+          <div className="w-[92px] h-[92px] rounded-full bg-[#E7F4FA] border border-[#DDEAF0] flex items-center justify-center">
+            
+            {/* Milk Icon */}
+            <svg
+              width="42"
+              height="42"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <path
+                d="M9 3H15V5L17 7V21H7V7L9 5V3Z"
+                stroke="#0A5DA8"
+                strokeWidth="1.8"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M9 3H15"
+                stroke="#0A5DA8"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+              <path
+                d="M7 12C8.2 11.4 8.8 11.4 10 12C11.2 12.6 11.8 12.6 13 12C14.2 11.4 14.8 11.4 16 12C16.4 12.2 16.7 12.3 17 12.35"
+                stroke="#0A5DA8"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* UPI ID */}
+        <h1 className="text-center text-[27px] font-semibold text-[#1B1B1B] tracking-[-0.3px]">
+          7070100669@myapgb
+        </h1>
+
+        {/* Business Box */}
+        <div className="mt-8 bg-[#E8EDF3] rounded-[22px] py-5 px-4 text-center border border-[#E0E6EC]">
+          <p className="text-[20px] font-medium text-[#7B7B7B]">
+            Business Name
           </p>
+
+          <h2 className="text-[25px] leading-[34px] font-semibold text-[#111111] mt-1">
+            Shaik Meeravali
+          </h2>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
+
+      {/* Bottom Text */}
+      <div className="absolute bottom-[165px] left-1/2 -translate-x-1/2 w-[90%] max-w-[420px] text-center">
+        <p className="text-[18px] leading-[28px] font-medium text-[#3D3D3D]">
+          This merchant receives money through payment requests. To
+          pay again, please visit their app/website.
+        </p>
+      </div>
     </div>
   );
 }
