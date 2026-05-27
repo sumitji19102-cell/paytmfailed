@@ -2,71 +2,79 @@
 
 import { motion } from "framer-motion";
 
+import {
+  Globe,
+  Code2,
+  Smartphone,
+  ShoppingCart,
+  Search,
+  Workflow,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
+
 export default function PortfolioWebsite() {
+
   const services = [
     {
       title: "Website Development",
-      desc: "Modern, fast and responsive business websites built for conversions.",
+      desc: "Modern and responsive business websites built for conversions.",
+      icon: <Code2 size={34} />,
     },
+
     {
       title: "App Development",
-      desc: "Custom mobile and web applications for startups and businesses.",
+      desc: "Custom mobile and web applications for businesses and startups.",
+      icon: <Smartphone size={34} />,
     },
+
     {
       title: "Digital Marketing",
-      desc: "Growth-focused marketing strategies for better reach and leads.",
+      desc: "Growth-focused marketing strategies for better reach and sales.",
+      icon: <Globe size={34} />,
     },
+
     {
       title: "SEO Optimization",
-      desc: "Improve rankings, visibility and organic traffic for your business.",
+      desc: "Improve rankings, visibility and organic business traffic.",
+      icon: <Search size={34} />,
     },
+
     {
-      title: "E-Commerce Management",
+      title: "E-Commerce",
       desc: "Store setup, optimization and management for online businesses.",
+      icon: <ShoppingCart size={34} />,
     },
+
     {
       title: "System Integration",
       desc: "Integrating APIs, payment systems and automation workflows.",
-    },
-  ];
-
-  const projects = [
-    {
-      title: "Business Landing Page",
-      tech: "Next.js • Tailwind CSS",
-    },
-    {
-      title: "E-Commerce Dashboard",
-      tech: "React • Firebase",
-    },
-    {
-      title: "Fitness Mobile App UI",
-      tech: "Figma • React Native",
+      icon: <Workflow size={34} />,
     },
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen font-sans overflow-hidden relative">
+    <div className="bg-black text-white min-h-screen overflow-hidden relative font-sans">
 
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
 
         <motion.div
           animate={{
-            x: [0, 120, -120, 0],
-            y: [0, -80, 80, 0],
+            x: [0, 100, -100, 0],
+            y: [0, -60, 60, 0],
           }}
           transition={{
             duration: 20,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-10 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"
+          className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-3xl"
         />
 
         <motion.div
           animate={{
-            x: [0, -100, 100, 0],
+            x: [0, -120, 120, 0],
             y: [0, 100, -100, 0],
           }}
           transition={{
@@ -74,153 +82,195 @@ export default function PortfolioWebsite() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-purple-500/20 rounded-full blur-3xl"
         />
 
       </div>
 
       {/* Navbar */}
-      <header className="flex items-center justify-between px-6 md:px-16 py-6 border-b border-white/10 sticky top-0 bg-black/70 backdrop-blur-md z-50">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
 
-        {/* Premium Animated Logo */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="flex items-center gap-3 cursor-pointer"
-        >
+        <div className="flex items-center justify-between px-6 md:px-16 py-5">
 
-          {/* Animated Circle */}
+          {/* Logo */}
           <motion.div
-            animate={{
-              rotate: 360,
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="relative w-12 h-12 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px] shadow-[0_0_25px_rgba(34,211,238,0.5)]"
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="flex items-center gap-4"
           >
 
-            <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+            <motion.div
+              animate={{
+                rotate: 360,
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px] shadow-[0_0_30px_rgba(34,211,238,0.5)]"
+            >
 
-              <motion.span
-                animate={{
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-                className="text-lg font-bold text-white"
-              >
-                A
-              </motion.span>
+              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+
+                <motion.span
+                  animate={{
+                    scale: [1, 1.2, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                  className="font-bold text-xl"
+                >
+                  A
+                </motion.span>
+
+              </div>
+
+            </motion.div>
+
+            <div>
+
+              <h1 className="text-2xl md:text-3xl font-black tracking-wide">
+                Aneesh
+              </h1>
+
+              <p className="text-xs text-cyan-400 tracking-[0.3em] uppercase">
+                Digital Solutions
+              </p>
 
             </div>
 
           </motion.div>
 
-          {/* Logo Text */}
-          <motion.h1
-            whileHover={{
-              scale: 1.05,
-            }}
-            className="text-2xl md:text-3xl font-black tracking-wide"
-          >
+          {/* Nav */}
+          <nav className="hidden md:flex items-center gap-8 text-white/70">
 
-            <span className="text-white">
-              Aneesh
-            </span>
+            <a href="#services" className="hover:text-cyan-400 transition">
+              Services
+            </a>
 
-            <motion.span
-              animate={{
-                opacity: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-              className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
-            >
-              Digital
-            </motion.span>
+            <a href="#about" className="hover:text-cyan-400 transition">
+              About
+            </a>
 
-          </motion.h1>
+            <a href="#contact" className="hover:text-cyan-400 transition">
+              Contact
+            </a>
 
-        </motion.div>
+          </nav>
 
-        {/* Navbar Links */}
-        <nav className="hidden md:flex gap-8 text-sm text-white/70">
-
-          <a href="#services" className="hover:text-cyan-400 transition">
-            Services
-          </a>
-
-          <a href="#projects" className="hover:text-cyan-400 transition">
-            Projects
-          </a>
-
-          <a href="#about" className="hover:text-cyan-400 transition">
-            About
-          </a>
-
-          <a href="#contact" className="hover:text-cyan-400 transition">
-            Contact
-          </a>
-
-        </nav>
+        </div>
 
       </header>
 
-      {/* Hero Section */}
-      <section className="px-6 md:px-16 py-28 md:py-40 text-center relative">
+      {/* Hero */}
+      <section className="relative px-6 md:px-16 py-28 md:py-40">
+
+        {/* SVG Grid */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.04]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="smallGrid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+              />
+            </pattern>
+          </defs>
+
+          <rect width="100%" height="100%" fill="url(#smallGrid)" />
+        </svg>
 
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-5xl mx-auto"
+          className="max-w-6xl mx-auto text-center relative z-10"
         >
 
-          <p className="uppercase tracking-[0.4em] text-sm text-cyan-400 mb-6">
-            Digital Solutions Expert
-          </p>
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+            }}
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8"
+          >
+
+            <Sparkles size={16} />
+
+            Helping Brands Grow Digitally
+
+          </motion.div>
 
           <motion.h1
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="text-5xl md:text-7xl font-bold leading-tight mb-8"
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+            }}
+            className="text-5xl md:text-7xl font-black leading-tight"
           >
-            Helping Brands Grow
 
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 animate-pulse">
-              Through Digital Innovation
+            Building
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+              {" "}Modern Digital{" "}
             </span>
+            Experiences
 
           </motion.h1>
 
-          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            I provide website development, app development, SEO,
-            international marketing, e-commerce management and digital
-            business solutions for startups, creators and businesses.
+          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mt-8 leading-relaxed">
+
+            I help startups, creators and businesses grow through
+            website development, SEO, app development, e-commerce
+            systems and digital marketing solutions.
+
           </p>
 
+          {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-5 mt-12">
 
             <motion.button
-              whileHover={{ scale: 1.08, y: -5 }}
-              className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+              whileHover={{
+                scale: 1.08,
+                y: -5,
+              }}
+              className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2"
             >
-              View My Work
+
+              View Projects
+
+              <ArrowRight size={18} />
+
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.08, y: -5 }}
+              whileHover={{
+                scale: 1.08,
+                y: -5,
+              }}
               className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10"
             >
+
               Contact Me
+
             </motion.button>
 
           </div>
@@ -243,7 +293,7 @@ export default function PortfolioWebsite() {
           className="max-w-7xl mx-auto"
         >
 
-          <div className="mb-16 text-center">
+          <div className="text-center mb-16">
 
             <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
               Services
@@ -261,84 +311,26 @@ export default function PortfolioWebsite() {
 
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/10 transition duration-500 hover:shadow-[0_0_40px_rgba(34,211,238,0.3)] backdrop-blur-xl"
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                }}
+                className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/10 transition duration-500 backdrop-blur-xl hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]"
               >
 
-                <h3 className="text-2xl font-semibold mb-4">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-purple-500/20 flex items-center justify-center text-cyan-300 mb-6 group-hover:scale-110 transition">
+
+                  {service.icon}
+
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4">
                   {service.title}
                 </h3>
 
                 <p className="text-white/70 leading-relaxed">
                   {service.desc}
                 </p>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
-        </motion.div>
-
-      </section>
-
-      {/* Projects */}
-      <section
-        id="projects"
-        className="px-6 md:px-16 py-24 border-t border-white/10"
-      >
-
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
-
-          <div className="mb-16 text-center">
-
-            <p className="text-purple-400 uppercase tracking-[0.3em] text-sm mb-4">
-              Portfolio
-            </p>
-
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Featured Projects
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-
-            {projects.map((project, index) => (
-
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] backdrop-blur-xl"
-              >
-
-                <div className="h-56 bg-gradient-to-br from-cyan-500/30 to-purple-500/30"></div>
-
-                <div className="p-6">
-
-                  <h3 className="text-2xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-white/60 mb-6">
-                    {project.tech}
-                  </p>
-
-                  <motion.button
-                    whileHover={{ scale: 1.08 }}
-                    className="px-5 py-3 rounded-xl bg-white text-black font-medium"
-                  >
-                    View Project
-                  </motion.button>
-
-                </div>
 
               </motion.div>
 
@@ -364,18 +356,16 @@ export default function PortfolioWebsite() {
           className="max-w-5xl mx-auto text-center"
         >
 
-          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
-            About Me
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Building Modern Digital Experiences
+          <h2 className="text-4xl md:text-5xl font-black mb-8">
+            Premium Digital Solutions
           </h2>
 
-          <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
-            I help businesses and creators establish a strong online presence
-            through websites, applications, SEO strategies and digital growth
-            systems.
+          <p className="text-white/70 text-lg leading-relaxed">
+
+            I focus on building high-quality digital experiences
+            with modern technologies, smooth user interfaces,
+            SEO optimization and scalable business systems.
+
           </p>
 
         </motion.div>
@@ -383,78 +373,43 @@ export default function PortfolioWebsite() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-16 py-24 border-t border-white/10">
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto rounded-[40px] p-12 text-center bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-white/10 backdrop-blur-xl"
-        >
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready To Build Your Next Project?
-          </h2>
-
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
-            Let’s work together to create a modern digital presence for your business.
-          </p>
-
-          <motion.button
-            whileHover={{ scale: 1.08, y: -5 }}
-            className="px-10 py-4 rounded-2xl bg-white text-black font-semibold"
-          >
-            Start A Project
-          </motion.button>
-
-        </motion.div>
-
-      </section>
-
-      {/* Contact */}
       <section
         id="contact"
         className="px-6 md:px-16 py-24 border-t border-white/10"
       >
 
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-5xl mx-auto rounded-[40px] p-12 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl text-center"
         >
 
-          <p className="text-purple-400 uppercase tracking-[0.3em] text-sm mb-4">
-            Contact
-          </p>
-
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let’s Connect
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            Let’s Build Something Amazing
           </h2>
 
-          <p className="text-white/70 text-lg mb-10">
-            Available for freelance projects and collaborations.
+          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
+
+            Available for freelance projects, collaborations and
+            long-term partnerships.
+
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <motion.button
+            whileHover={{
+              scale: 1.08,
+              y: -5,
+            }}
+            className="px-10 py-4 rounded-2xl bg-white text-black font-semibold inline-flex items-center gap-2"
+          >
 
-            <motion.button
-              whileHover={{ scale: 1.08, y: -5 }}
-              className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
-            >
-              WhatsApp
-            </motion.button>
+            Start A Project
 
-            <motion.button
-              whileHover={{ scale: 1.08, y: -5 }}
-              className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10"
-            >
-              Email Me
-            </motion.button>
+            <ArrowRight size={18} />
 
-          </div>
+          </motion.button>
 
         </motion.div>
 
@@ -462,7 +417,9 @@ export default function PortfolioWebsite() {
 
       {/* Footer */}
       <footer className="px-6 md:px-16 py-10 border-t border-white/10 text-center text-white/50 text-sm">
+
         © 2026 Aneesh Kumar Maury — All Rights Reserved.
+
       </footer>
 
     </div>
