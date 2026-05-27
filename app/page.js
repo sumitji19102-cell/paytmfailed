@@ -24,7 +24,7 @@ export default function PortfolioWebsite() {
 
     {
       title: "App Development",
-      desc: "Custom mobile and web applications for businesses and startups.",
+      desc: "Custom mobile and web applications for startups and businesses.",
       icon: <Smartphone size={34} />,
     },
 
@@ -166,116 +166,314 @@ export default function PortfolioWebsite() {
 
       </header>
 
-      {/* Hero */}
-      <section className="relative px-6 md:px-16 py-28 md:py-40">
+      {/* Hero Section */}
+      <section className="relative px-6 md:px-16 pt-24 pb-32 overflow-hidden">
 
-        {/* SVG Grid */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.04]"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern
-              id="smallGrid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 40 0 L 0 0 0 40"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
+        {/* Background Grid */}
+        <div className="absolute inset-0 opacity-[0.04]">
 
-          <rect width="100%" height="100%" fill="url(#smallGrid)" />
-        </svg>
+          <svg
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <defs>
+
+              <pattern
+                id="grid"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+
+                <path
+                  d="M 40 0 L 0 0 0 40"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+
+              </pattern>
+
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#grid)" />
+
+          </svg>
+
+        </div>
+
+        {/* Floating Orbs */}
+        <motion.div
+          animate={{
+            y: [0, -30, 0],
+            x: [0, 20, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+          }}
+          className="absolute top-20 right-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full"
+        />
 
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="max-w-6xl mx-auto text-center relative z-10"
-        >
+          animate={{
+            y: [0, 40, 0],
+            x: [0, -30, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+          }}
+          className="absolute bottom-10 left-10 w-80 h-80 bg-purple-500/20 blur-3xl rounded-full"
+        />
 
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-            }}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8"
-          >
+        <div className="max-w-7xl mx-auto relative z-10">
 
-            <Sparkles size={16} />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-            Helping Brands Grow Digitally
-
-          </motion.div>
-
-          <motion.h1
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-            }}
-            className="text-5xl md:text-7xl font-black leading-tight"
-          >
-
-            Building
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
-              {" "}Modern Digital{" "}
-            </span>
-            Experiences
-
-          </motion.h1>
-
-          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mt-8 leading-relaxed">
-
-            I help startups, creators and businesses grow through
-            website development, SEO, app development, e-commerce
-            systems and digital marketing solutions.
-
-          </p>
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-5 mt-12">
-
-            <motion.button
-              whileHover={{
-                scale: 1.08,
-                y: -5,
-              }}
-              className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2"
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
             >
 
-              View Projects
+              {/* Trust Badge */}
+              <motion.div
+                animate={{
+                  y: [0, -6, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                }}
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8 backdrop-blur-xl"
+              >
 
-              <ArrowRight size={18} />
+                <Sparkles size={16} />
 
-            </motion.button>
+                Trusted Digital Solutions For Modern Businesses
 
-            <motion.button
-              whileHover={{
-                scale: 1.08,
-                y: -5,
-              }}
-              className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10"
+              </motion.div>
+
+              {/* Heading */}
+              <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
+
+                Helping Businesses
+
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
+
+                  Grow Online
+
+                </span>
+
+              </h1>
+
+              {/* Description */}
+              <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+
+                I build modern websites, scalable applications,
+                SEO systems and digital growth solutions that help
+                businesses attract customers, improve trust and grow faster online.
+
+              </p>
+
+              {/* CTA */}
+              <div className="flex flex-col sm:flex-row gap-5 mb-12">
+
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    y: -5,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(255,255,255,0.15)]"
+                >
+
+                  View My Work
+
+                  <ArrowRight size={18} />
+
+                </motion.button>
+
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    y: -5,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 backdrop-blur-xl"
+                >
+
+                  Book A Consultation
+
+                </motion.button>
+
+              </div>
+
+              {/* Metrics */}
+              <div className="grid grid-cols-3 gap-6">
+
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
+                >
+
+                  <h3 className="text-3xl font-black text-cyan-400 mb-2">
+                    10+
+                  </h3>
+
+                  <p className="text-white/60 text-sm">
+                    Digital Solutions
+                  </p>
+
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
+                >
+
+                  <h3 className="text-3xl font-black text-purple-400 mb-2">
+                    24/7
+                  </h3>
+
+                  <p className="text-white/60 text-sm">
+                    Support
+                  </p>
+
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
+                >
+
+                  <h3 className="text-3xl font-black text-cyan-400 mb-2">
+                    Fast
+                  </h3>
+
+                  <p className="text-white/60 text-sm">
+                    Delivery
+                  </p>
+
+                </motion.div>
+
+              </div>
+
+            </motion.div>
+
+            {/* Right UI Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="relative"
             >
 
-              Contact Me
+              <motion.div
+                animate={{
+                  y: [0, -15, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                }}
+                className="relative rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-2xl p-8 shadow-[0_0_60px_rgba(34,211,238,0.15)]"
+              >
 
-            </motion.button>
+                {/* Browser Top */}
+                <div className="flex items-center gap-2 mb-8">
+
+                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
+
+                </div>
+
+                {/* Dashboard */}
+                <div className="space-y-6">
+
+                  <div className="p-6 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/20">
+
+                    <div className="flex items-center justify-between mb-5">
+
+                      <h3 className="text-xl font-bold">
+                        Business Growth
+                      </h3>
+
+                      <Globe className="text-cyan-300" />
+
+                    </div>
+
+                    <div className="w-full h-3 rounded-full bg-white/10 overflow-hidden">
+
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "85%" }}
+                        transition={{
+                          duration: 2,
+                        }}
+                        className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
+                      />
+
+                    </div>
+
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-5">
+
+                    <motion.div
+                      whileHover={{ scale: 1.03 }}
+                      className="p-6 rounded-3xl bg-white/5 border border-white/10"
+                    >
+
+                      <Code2 className="text-cyan-400 mb-4" />
+
+                      <h3 className="font-bold text-lg mb-2">
+                        Development
+                      </h3>
+
+                      <p className="text-white/60 text-sm">
+                        Websites & Apps
+                      </p>
+
+                    </motion.div>
+
+                    <motion.div
+                      whileHover={{ scale: 1.03 }}
+                      className="p-6 rounded-3xl bg-white/5 border border-white/10"
+                    >
+
+                      <Search className="text-purple-400 mb-4" />
+
+                      <h3 className="font-bold text-lg mb-2">
+                        SEO Growth
+                      </h3>
+
+                      <p className="text-white/60 text-sm">
+                        Better Visibility
+                      </p>
+
+                    </motion.div>
+
+                  </div>
+
+                </div>
+
+              </motion.div>
+
+            </motion.div>
 
           </div>
 
-        </motion.div>
+        </div>
 
       </section>
 
@@ -337,79 +535,6 @@ export default function PortfolioWebsite() {
             ))}
 
           </div>
-
-        </motion.div>
-
-      </section>
-
-      {/* About */}
-      <section
-        id="about"
-        className="px-6 md:px-16 py-24 border-t border-white/10"
-      >
-
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto text-center"
-        >
-
-          <h2 className="text-4xl md:text-5xl font-black mb-8">
-            Premium Digital Solutions
-          </h2>
-
-          <p className="text-white/70 text-lg leading-relaxed">
-
-            I focus on building high-quality digital experiences
-            with modern technologies, smooth user interfaces,
-            SEO optimization and scalable business systems.
-
-          </p>
-
-        </motion.div>
-
-      </section>
-
-      {/* CTA */}
-      <section
-        id="contact"
-        className="px-6 md:px-16 py-24 border-t border-white/10"
-      >
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto rounded-[40px] p-12 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-white/10 backdrop-blur-xl text-center"
-        >
-
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
-            Let’s Build Something Amazing
-          </h2>
-
-          <p className="text-white/70 text-lg max-w-2xl mx-auto mb-10">
-
-            Available for freelance projects, collaborations and
-            long-term partnerships.
-
-          </p>
-
-          <motion.button
-            whileHover={{
-              scale: 1.08,
-              y: -5,
-            }}
-            className="px-10 py-4 rounded-2xl bg-white text-black font-semibold inline-flex items-center gap-2"
-          >
-
-            Start A Project
-
-            <ArrowRight size={18} />
-
-          </motion.button>
 
         </motion.div>
 
