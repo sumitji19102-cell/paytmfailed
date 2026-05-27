@@ -46,7 +46,7 @@ export default function PortfolioWebsite() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen font-sans overflow-hidden scroll-smooth relative">
+    <div className="bg-black text-white min-h-screen font-sans overflow-hidden relative">
 
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -82,13 +82,76 @@ export default function PortfolioWebsite() {
       {/* Navbar */}
       <header className="flex items-center justify-between px-6 md:px-16 py-6 border-b border-white/10 sticky top-0 bg-black/70 backdrop-blur-md z-50">
 
-        <motion.h1
-          whileHover={{ scale: 1.1 }}
-          className="text-2xl font-bold tracking-wide cursor-pointer"
+        {/* Premium Animated Logo */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="flex items-center gap-3 cursor-pointer"
         >
-          Aneesh
-        </motion.h1>
 
+          {/* Animated Circle */}
+          <motion.div
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="relative w-12 h-12 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px] shadow-[0_0_25px_rgba(34,211,238,0.5)]"
+          >
+
+            <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+
+              <motion.span
+                animate={{
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                className="text-lg font-bold text-white"
+              >
+                A
+              </motion.span>
+
+            </div>
+
+          </motion.div>
+
+          {/* Logo Text */}
+          <motion.h1
+            whileHover={{
+              scale: 1.05,
+            }}
+            className="text-2xl md:text-3xl font-black tracking-wide"
+          >
+
+            <span className="text-white">
+              Aneesh
+            </span>
+
+            <motion.span
+              animate={{
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+              }}
+              className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500"
+            >
+              Digital
+            </motion.span>
+
+          </motion.h1>
+
+        </motion.div>
+
+        {/* Navbar Links */}
         <nav className="hidden md:flex gap-8 text-sm text-white/70">
 
           <a href="#services" className="hover:text-cyan-400 transition">
@@ -312,8 +375,7 @@ export default function PortfolioWebsite() {
           <p className="text-lg text-white/70 leading-relaxed max-w-3xl mx-auto">
             I help businesses and creators establish a strong online presence
             through websites, applications, SEO strategies and digital growth
-            systems. My focus is on creating premium experiences that look
-            modern, perform fast and help brands grow internationally.
+            systems.
           </p>
 
         </motion.div>
@@ -373,7 +435,7 @@ export default function PortfolioWebsite() {
           </h2>
 
           <p className="text-white/70 text-lg mb-10">
-            Available for freelance projects, collaborations and long-term work.
+            Available for freelance projects and collaborations.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
