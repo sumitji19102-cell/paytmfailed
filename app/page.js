@@ -1,7 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Moon } from "lucide-react";
+
+import {
+  ArrowRight,
+  Moon,
+  Sparkles,
+  Star,
+  BadgeCheck,
+  CheckCircle2,
+  Globe,
+  Rocket,
+  ShieldCheck,
+} from "lucide-react";
+
+import { FiInstagram } from "react-icons/fi";
+import { RiFacebookBoxLine } from "react-icons/ri";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function PremiumPortfolio() {
 
@@ -10,18 +25,42 @@ export default function PremiumPortfolio() {
       title: "Social Media Management",
       subtitle: "Instagram, LinkedIn and more",
       desc: "Amplify your social media impact through expert management services and growth strategies.",
+      icon: "📱",
     },
 
     {
       title: "Website Development",
       subtitle: "Modern websites for brands",
       desc: "Premium responsive websites designed for business trust and conversions.",
+      icon: "💻",
     },
 
     {
       title: "SEO Optimization",
       subtitle: "Improve online visibility",
       desc: "Boost search rankings and attract more organic business traffic.",
+      icon: "🚀",
+    },
+
+    {
+      title: "App Development",
+      subtitle: "Android & Web Apps",
+      desc: "Scalable mobile and web applications built for modern businesses.",
+      icon: "📲",
+    },
+
+    {
+      title: "UI/UX Design",
+      subtitle: "Modern User Experience",
+      desc: "Beautiful interfaces designed for engagement and conversion.",
+      icon: "🎨",
+    },
+
+    {
+      title: "Brand Strategy",
+      subtitle: "Identity & Growth",
+      desc: "Creative branding solutions for digital-first businesses.",
+      icon: "⚡",
     },
   ];
 
@@ -63,17 +102,62 @@ export default function PremiumPortfolio() {
     },
   ];
 
+  const reviews = [
+    {
+      name: "Rahul Sharma",
+      review:
+        "Excellent communication and premium work quality. Highly recommended.",
+    },
+
+    {
+      name: "Amit Patel",
+      review:
+        "Professional website development with modern UI and smooth delivery.",
+    },
+
+    {
+      name: "Vikash Singh",
+      review:
+        "Amazing SEO optimization and branding support for our company.",
+    },
+  ];
+
+  const team = [
+    {
+      name: "Aneesh Kumar",
+      role: "Founder & Developer",
+      emoji: "👨‍💻",
+    },
+
+    {
+      name: "Rahul Sharma",
+      role: "SEO Expert",
+      emoji: "📈",
+    },
+
+    {
+      name: "Amit Patel",
+      role: "UI/UX Designer",
+      emoji: "🎨",
+    },
+  ];
+
   return (
     <div className="bg-[#f3efea] min-h-screen overflow-x-hidden text-black font-sans relative">
 
-      {/* Noise Background */}
+      {/* Background Glow */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#6d7df6]/20 blur-[120px] rounded-full" />
+
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-400/20 blur-[120px] rounded-full" />
+
+      {/* Background Noise */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none z-0">
 
         <svg width="100%" height="100%">
           <filter id="noise">
             <feTurbulence
               type="fractalNoise"
-              baseFrequency="0.9"
+              baseFrequency="0.8"
               numOctaves="4"
               stitchTiles="stitch"
             />
@@ -88,60 +172,35 @@ export default function PremiumPortfolio() {
 
       </div>
 
-      {/* Left Vertical Line */}
-      <div className="fixed left-3 md:left-6 top-0 h-full w-[3px] bg-black z-50">
-
-        <div className="absolute top-5 -left-[10px] w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-        <div className="absolute bottom-5 -left-[10px] w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-      </div>
-
-      {/* Right Vertical Line */}
-      <div className="fixed right-3 md:right-6 top-0 h-full w-[3px] bg-black z-50">
-
-        <div className="absolute top-20 -left-[10px] w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-        <div className="absolute bottom-20 -left-[10px] w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-      </div>
-
-      {/* Floating Circles */}
+      {/* Floating Elements */}
       <motion.div
         animate={{
           y: [0, -20, 0],
+          rotate: [0, 10, -10, 0],
         }}
         transition={{
-          duration: 6,
+          duration: 5,
           repeat: Infinity,
         }}
-        className="absolute top-[120px] left-[35%] w-10 h-10 rounded-full border-[3px] border-black bg-[#d8d3cc]"
-      />
+        className="absolute top-[20%] right-[10%] text-5xl"
+      >
+        ✨
+      </motion.div>
 
       <motion.div
         animate={{
           y: [0, 20, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 6,
           repeat: Infinity,
         }}
-        className="absolute top-[900px] right-[20%] w-14 h-14 rounded-full border-[3px] border-black bg-[#d8d3cc]"
-      />
+        className="absolute bottom-[20%] left-[10%] text-5xl"
+      >
+        🚀
+      </motion.div>
 
-      {/* Dot Grid */}
-      <div className="absolute right-10 top-[700px] grid grid-cols-4 gap-3 opacity-70">
-
-        {[...Array(16)].map((_, i) => (
-          <div
-            key={i}
-            className="w-2 h-2 rounded-full bg-black"
-          />
-        ))}
-
-      </div>
-
-      {/* Navbar */}
+      {/* NAVBAR */}
       <header className="px-5 sm:px-6 md:px-12 py-6 md:py-8 relative z-10">
 
         <div className="flex items-center justify-between">
@@ -150,28 +209,30 @@ export default function PremiumPortfolio() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3 md:gap-4"
+            className="flex items-center gap-4"
           >
 
             <motion.div
               whileHover={{
                 rotate: 180,
+                scale: 1.1,
               }}
-              transition={{
-                duration: 0.5,
-              }}
-              className="w-12 h-12 md:w-14 md:h-14 border-[3px] border-[#5b6cff] rounded-xl flex items-center justify-center bg-white"
+              className="w-14 h-14 border-2 border-[#5b6cff] rounded-2xl flex items-center justify-center bg-white shadow-[5px_5px_0px_black]"
             >
 
-              <div className="w-6 h-6 md:w-8 md:h-8 border-[3px] border-[#5b6cff] rotate-45" />
+              <Rocket size={28} className="text-[#5b6cff]" />
 
             </motion.div>
 
             <div>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#5b6cff]">
+              <h1 className="text-3xl md:text-4xl font-black text-[#5b6cff]">
                 AneeshUp
               </h1>
+
+              <p className="text-sm font-semibold text-black/60">
+                Creative Digital Agency
+              </p>
 
             </div>
 
@@ -189,78 +250,92 @@ export default function PremiumPortfolio() {
 
       </header>
 
-      {/* Hero */}
-      <section className="relative px-5 sm:px-6 md:px-12 pt-6 md:pt-10 pb-24 md:pb-32 overflow-hidden">
+      {/* HERO */}
+      <section className="relative px-5 sm:px-6 md:px-12 pt-10 pb-32 overflow-hidden">
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#6d7df620,transparent_40%)]" />
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center relative z-10">
-
-          {/* Left */}
+          {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="order-2 lg:order-1"
           >
 
-            <p className="uppercase tracking-[0.2em] text-xs sm:text-sm font-bold mb-5 md:mb-6">
-              HELLO WORLD,
-              <span className="text-[#5b6cff] ml-2">
-                WE ARE
-              </span>
+            <motion.div
+              animate={{
+                y: [0, -5, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-black bg-white shadow-[4px_4px_0px_black] mb-8"
+            >
+
+              <ShieldCheck size={18} />
+
+              Trusted By 80+ Clients
+
+            </motion.div>
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold mb-5 text-[#5b6cff]">
+              DIGITAL AGENCY
             </p>
 
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.95] mb-6 tracking-tight text-[#5b6cff] drop-shadow-[3px_3px_0px_black]">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.95] mb-8 text-[#5b6cff]">
 
-              ANEESHUP
+              BUILD
+              <br />
+              YOUR
+              <br />
+              BRAND.
 
             </h1>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl italic font-bold mb-8">
-              A Digital Marketing Agency
-            </h2>
+            <p className="text-lg md:text-xl text-black/60 leading-relaxed mb-10 max-w-xl">
 
-            <p className="text-black/60 text-base sm:text-lg md:text-xl leading-relaxed max-w-xl mb-10">
-
-              We are a team of enthusiastic individuals who help
-              brands grow by unleashing the potential of modern
-              digital marketing and websites.
+              Premium websites, SEO systems, branding,
+              social media growth and modern digital
+              experiences for businesses worldwide.
 
             </p>
 
-            {/* Socials */}
-            <div className="flex items-center gap-4 sm:gap-6 mb-10 md:mb-12">
+            {/* Social Icons */}
+            <div className="flex items-center gap-5 mb-10">
 
-              {["I", "L", "T"].map((item, i) => (
+              {[FiInstagram, RiFacebookBoxLine, FaLinkedin].map(
+                (Icon, i) => (
 
-                <motion.div
-                  key={i}
-                  whileHover={{
-                    scale: 1.1,
-                    y: -5,
-                  }}
-                  className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border-[3px] border-black flex items-center justify-center text-lg sm:text-xl font-black hover:bg-black hover:text-white transition bg-white"
-                >
+                  <motion.div
+                    key={i}
+                    whileHover={{
+                      scale: 1.1,
+                      y: -5,
+                    }}
+                    className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center bg-white shadow-[4px_4px_0px_black] text-xl hover:bg-black hover:text-white transition"
+                  >
 
-                  {item}
+                    <Icon />
 
-                </motion.div>
+                  </motion.div>
 
-              ))}
+                )
+              )}
 
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col md:flex-row gap-5 w-full">
+            <div className="flex flex-col sm:flex-row gap-5">
 
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  y: -5,
                 }}
-                className="px-8 sm:px-10 py-4 sm:py-5 rounded-full border-[3px] border-black bg-white text-base sm:text-lg font-bold shadow-[6px_6px_0px_black]"
+                className="relative overflow-hidden px-8 py-4 rounded-full bg-gradient-to-r from-[#6d7df6] to-[#9f8cff] text-white font-black border-2 border-black shadow-[5px_5px_0px_black]"
               >
+
+                <span className="absolute inset-0 bg-white/20 translate-x-[-100%] hover:translate-x-[100%] transition duration-1000" />
 
                 CONTACT US
 
@@ -269,14 +344,13 @@ export default function PremiumPortfolio() {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  y: -5,
                 }}
-                className="text-base sm:text-lg font-bold flex items-center gap-3"
+                className="px-8 py-4 rounded-full border-2 border-black bg-white font-black shadow-[5px_5px_0px_black] flex items-center gap-3"
               >
 
-                DOWNLOAD BROCHURE
+                VIEW PROJECTS
 
-                <ArrowRight size={22} />
+                <ArrowRight size={20} />
 
               </motion.button>
 
@@ -284,18 +358,18 @@ export default function PremiumPortfolio() {
 
           </motion.div>
 
-          {/* Right Illustration */}
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="relative flex justify-center order-1 lg:order-2"
+            className="relative flex justify-center"
           >
 
-            {/* Circle */}
-            <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] rounded-full bg-[#6d7df6] relative flex items-center justify-center mx-auto shadow-[10px_10px_0px_black]">
+            {/* Main Circle */}
+            <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] rounded-full bg-gradient-to-br from-[#6d7df6] to-[#9f8cff] flex items-center justify-center relative shadow-[10px_10px_0px_black]">
 
-              {/* Rocket */}
+              {/* Floating Icons */}
               <motion.div
                 animate={{
                   y: [0, -20, 0],
@@ -304,88 +378,75 @@ export default function PremiumPortfolio() {
                   duration: 4,
                   repeat: Infinity,
                 }}
-                className="text-[100px] sm:text-[140px] md:text-[180px]"
+                className="text-[120px] md:text-[180px]"
               >
                 🚀
               </motion.div>
 
-              {/* Floating Icons */}
-              {["💬", "▶️", "😂", "❤️"].map((emoji, i) => (
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                }}
+                className="absolute top-10 left-10 text-5xl"
+              >
+                🌍
+              </motion.div>
 
-                <motion.div
-                  key={i}
-                  animate={{
-                    y: [0, i % 2 === 0 ? -15 : 15, 0],
-                  }}
-                  transition={{
-                    duration: 4 + i,
-                    repeat: Infinity,
-                  }}
-                  className={`absolute text-3xl sm:text-5xl md:text-6xl ${
-                    i === 0
-                      ? "top-10 left-6 sm:left-10"
-                      : i === 1
-                      ? "bottom-16 left-4 sm:left-10"
-                      : i === 2
-                      ? "top-12 right-6 sm:right-20"
-                      : "bottom-12 right-4 sm:right-10"
-                  }`}
-                >
+              <motion.div
+                animate={{
+                  y: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                }}
+                className="absolute bottom-10 right-10 text-5xl"
+              >
+                💡
+              </motion.div>
 
-                  {emoji}
-
-                </motion.div>
-
-              ))}
+              <motion.div
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="absolute top-1/2 left-0"
+              >
+                <Sparkles size={40} />
+              </motion.div>
 
             </div>
 
             {/* Stats */}
-            <div className="absolute -bottom-6 left-0 sm:left-4 md:left-0 px-4 sm:px-6 py-3 sm:py-4 bg-white rounded-full border-[3px] border-black shadow-[4px_4px_0px_black]">
+            <div className="absolute bottom-0 left-0 bg-white rounded-full px-6 py-4 border-2 border-black shadow-[5px_5px_0px_black]">
 
-              <div className="flex items-center gap-3 sm:gap-5">
+              <h2 className="text-4xl font-black">
+                80+
+              </h2>
 
-                <h3 className="text-2xl sm:text-4xl md:text-5xl font-black">
-                  30+
-                </h3>
-
-                <div>
-
-                  <p className="text-[#5b6cff] font-bold text-xs sm:text-base">
-                    HAPPY
-                  </p>
-
-                  <p className="font-bold text-xs sm:text-base">
-                    CLIENTS
-                  </p>
-
-                </div>
-
-              </div>
+              <p className="font-bold text-[#5b6cff]">
+                Happy Clients
+              </p>
 
             </div>
 
-            <div className="absolute -bottom-16 right-0 sm:right-4 md:right-0 px-4 sm:px-6 py-3 sm:py-4 bg-white rounded-full border-[3px] border-black shadow-[4px_4px_0px_black]">
+            <div className="absolute top-0 right-0 bg-white rounded-full px-6 py-4 border-2 border-black shadow-[5px_5px_0px_black]">
 
-              <div className="flex items-center gap-3 sm:gap-5">
+              <h2 className="text-4xl font-black">
+                100+
+              </h2>
 
-                <h3 className="text-2xl sm:text-4xl md:text-5xl font-black">
-                  999+
-                </h3>
-
-                <div>
-
-                  <p className="font-bold text-xs sm:text-base">
-                    PROJECTS
-                  </p>
-
-                  <p className="text-[#5b6cff] font-bold text-xs sm:text-base">
-                    COMPLETED
-                  </p>
-
-                </div>
-
-              </div>
+              <p className="font-bold text-[#5b6cff]">
+                Projects
+              </p>
 
             </div>
 
@@ -395,27 +456,48 @@ export default function PremiumPortfolio() {
 
       </section>
 
-      {/* Divider */}
-      <div className="w-full flex justify-center py-10">
+      {/* MARQUEE */}
+      <section className="py-16 overflow-hidden">
 
-        <div className="w-[80%] h-[3px] bg-black rounded-full relative">
+        <motion.div
+          animate={{
+            x: ["0%", "-100%"],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="flex gap-20 whitespace-nowrap text-5xl font-black text-black/10"
+        >
 
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
+          <span>SEO</span>
+          <span>MARKETING</span>
+          <span>BRANDING</span>
+          <span>WEBSITES</span>
+          <span>DESIGN</span>
+          <span>APPS</span>
 
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
+        </motion.div>
 
-        </div>
+      </section>
 
-      </div>
-
-      {/* Services */}
-      <section className="px-5 sm:px-6 md:px-12 py-24 md:py-28 relative z-10">
+      {/* SERVICES */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
 
         <div className="max-w-7xl mx-auto">
 
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-center mb-16">
-            OUR SERVICES
-          </h2>
+          <div className="text-center mb-20">
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#5b6cff] mb-4">
+              SERVICES
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-black">
+              WHAT WE DO
+            </h2>
+
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -427,18 +509,22 @@ export default function PremiumPortfolio() {
                   y: -10,
                   rotate: -1,
                 }}
-                className="bg-[#f8f5f1] rounded-[30px] p-6 sm:p-8 md:p-10 shadow-[5px_5px_0px_black] border-[3px] border-black"
+                className="bg-white/70 backdrop-blur-md rounded-[30px] hover:shadow-[0_0_40px_#6d7df6] transition-all duration-500 p-8 border-2 border-black"
               >
 
-                <h3 className="text-2xl sm:text-3xl font-black mb-8 uppercase">
+                <div className="text-6xl mb-6">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-3xl font-black mb-4">
                   {service.title}
                 </h3>
 
-                <h4 className="text-xl sm:text-2xl font-bold mb-6">
+                <h4 className="font-bold text-[#5b6cff] mb-4">
                   {service.subtitle}
                 </h4>
 
-                <p className="text-black/60 text-base sm:text-lg leading-relaxed">
+                <p className="text-black/60 leading-relaxed">
                   {service.desc}
                 </p>
 
@@ -452,50 +538,23 @@ export default function PremiumPortfolio() {
 
       </section>
 
-      {/* Divider */}
-      <div className="w-full flex justify-center py-10">
-
-        <div className="w-[80%] h-[3px] bg-black rounded-full relative">
-
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-[3px] border-black bg-[#f3efea]" />
-
-        </div>
-
-      </div>
-
-      {/* Portfolio */}
-      <section className="px-5 sm:px-6 md:px-12 py-24 md:py-28 relative z-10">
+      {/* PORTFOLIO */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
 
         <div className="max-w-7xl mx-auto">
 
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-center mb-16">
-            PORTFOLIO
-          </h2>
+          <div className="text-center mb-20">
 
-          {/* Categories */}
-          <div className="flex flex-wrap justify-center gap-5 sm:gap-10 mb-16 md:mb-20 font-bold text-sm sm:text-base">
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#5b6cff] mb-4">
+              PORTFOLIO
+            </p>
 
-            <button className="text-[#5b6cff] border-b-4 border-[#5b6cff] pb-2">
-              ALL
-            </button>
-
-            <button>
-              WEBSITES
-            </button>
-
-            <button>
-              DASHBOARDS
-            </button>
-
-            <button>
-              UI/UX
-            </button>
+            <h2 className="text-5xl md:text-7xl font-black">
+              RECENT WORK
+            </h2>
 
           </div>
 
-          {/* Portfolio Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {portfolio.map((item, index) => (
@@ -505,38 +564,39 @@ export default function PremiumPortfolio() {
                 whileHover={{
                   y: -10,
                 }}
-                className="group bg-[#f8f5f1] rounded-[35px] overflow-hidden border-[3px] border-black shadow-[6px_6px_0px_black] hover:shadow-[10px_10px_0px_black] transition-all duration-300"
+                className="bg-white rounded-[35px] overflow-hidden border-2 border-black shadow-[6px_6px_0px_black]"
               >
 
-                {/* Image */}
-                <div className="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-[#6d7df6] to-[#9f8cff] flex items-center justify-center text-5xl sm:text-6xl md:text-7xl overflow-hidden">
+                <div className="h-64 bg-gradient-to-br from-[#6d7df6] to-[#9f8cff] flex items-center justify-center text-7xl">
 
-                  <div className="group-hover:scale-110 transition-transform duration-500">
-
-                    {item.emoji}
-
-                  </div>
+                  {item.emoji}
 
                 </div>
 
-                {/* Content */}
-                <div className="p-6 sm:p-8">
+                <div className="p-8">
 
-                  <p className="text-[#5b6cff] font-bold text-xs sm:text-sm mb-3 uppercase">
-                    {item.category}
-                  </p>
+                  <div className="flex items-center gap-2 mb-3">
 
-                  <h3 className="text-2xl sm:text-3xl font-black mb-6">
+                    <Star
+                      size={15}
+                      className="fill-[#5b6cff] text-[#5b6cff]"
+                    />
+
+                    <p className="text-[#5b6cff] font-bold text-sm">
+                      {item.category}
+                    </p>
+
+                  </div>
+
+                  <h3 className="text-3xl font-black mb-5">
                     {item.title}
                   </h3>
 
-                  <button className="relative font-bold group flex items-center gap-3">
+                  <button className="flex items-center gap-3 font-bold">
 
                     See Project
 
                     <ArrowRight size={18} />
-
-                    <span className="absolute left-0 -bottom-1 w-0 h-[3px] bg-[#5b6cff] transition-all duration-300 group-hover:w-full" />
 
                   </button>
 
@@ -552,16 +612,183 @@ export default function PremiumPortfolio() {
 
       </section>
 
-      {/* Footer */}
-      <footer className="px-5 sm:px-6 md:px-12 py-10 md:py-14 border-t-[3px] border-black relative z-10">
+      {/* TEAM */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#5b6cff] mb-4">
+              TEAM
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-black">
+              OUR TEAM
+            </h2>
+
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {team.map((member, index) => (
+
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                }}
+                className="bg-white rounded-[30px] p-8 border-2 border-black shadow-[6px_6px_0px_black] text-center"
+              >
+
+                <div className="text-7xl mb-6">
+                  {member.emoji}
+                </div>
+
+                <h3 className="text-3xl font-black mb-3">
+                  {member.name}
+                </h3>
+
+                <p className="text-[#5b6cff] font-bold">
+                  {member.role}
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* REVIEWS */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#5b6cff] mb-4">
+              REVIEWS
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-black">
+              CLIENT FEEDBACK
+            </h2>
+
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {reviews.map((item, index) => (
+
+              <motion.div
+                key={index}
+                whileHover={{
+                  y: -10,
+                }}
+                className="bg-white rounded-[30px] p-8 border-2 border-black shadow-[6px_6px_0px_black]"
+              >
+
+                <div className="flex gap-1 mb-5">
+
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={18}
+                      className="fill-[#5b6cff] text-[#5b6cff]"
+                    />
+                  ))}
+
+                </div>
+
+                <p className="text-black/70 leading-relaxed mb-6">
+                  {item.review}
+                </p>
+
+                <div className="flex items-center gap-3">
+
+                  <CheckCircle2 className="text-[#5b6cff]" />
+
+                  <h4 className="font-black">
+                    {item.name}
+                  </h4>
+
+                </div>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* WAVE */}
+      <div className="w-full overflow-hidden leading-none">
+
+        <svg
+          viewBox="0 0 1440 200"
+          className="w-full h-[120px]"
+          preserveAspectRatio="none"
+        >
+
+          <path
+            fill="#6d7df6"
+            fillOpacity="1"
+            d="M0,96L80,90.7C160,85,320,75,480,90.7C640,107,800,149,960,149.3C1120,149,1280,107,1360,85.3L1440,64L1440,320L0,320Z"
+          />
+
+        </svg>
+
+      </div>
+
+      {/* CTA */}
+      <section className="bg-[#6d7df6] px-5 sm:px-6 md:px-12 py-24 text-white text-center">
+
+        <Globe size={60} className="mx-auto mb-8" />
+
+        <h2 className="text-5xl md:text-7xl font-black mb-8">
+
+          LET'S BUILD
+          <br />
+          SOMETHING AMAZING
+
+        </h2>
+
+        <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+
+          Premium digital experiences crafted for modern brands.
+
+        </p>
+
+        <motion.button
+          whileHover={{
+            scale: 1.05,
+          }}
+          className="px-8 py-4 rounded-full bg-white text-black font-black border-2 border-black shadow-[5px_5px_0px_black]"
+        >
+
+          START PROJECT
+
+        </motion.button>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-5 sm:px-6 md:px-12 py-10 border-t-2 border-black">
 
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
 
-          <h3 className="text-2xl sm:text-3xl font-black text-[#5b6cff]">
+          <h3 className="text-3xl font-black text-[#5b6cff]">
             AneeshUp
           </h3>
 
-          <p className="font-bold text-center text-sm sm:text-base">
+          <p className="font-bold text-center">
             © 2026 Aneesh Kumar Maury
           </p>
 
