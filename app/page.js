@@ -566,7 +566,7 @@ export default function PortfolioWebsite() {
 
               {
                 initial: "R",
-                name: "राहुल शर्मा",
+                name: "Rahul Sharma",
                 role: "SEO Specialist",
                 desc: "Improving search visibility and growth.",
                 color: "from-purple-400 to-pink-500",
@@ -574,7 +574,7 @@ export default function PortfolioWebsite() {
 
               {
                 initial: "V",
-                name: "विकाश सिंह",
+                name: "Ajay singh",
                 role: "Marketing Manager",
                 desc: "Managing branding and digital campaigns.",
                 color: "from-green-400 to-emerald-500",
@@ -582,7 +582,7 @@ export default function PortfolioWebsite() {
 
               {
                 initial: "A",
-                name: "अमित पटेल",
+                name: "Amit Patel",
                 role: "UI/UX Designer",
                 desc: "Designing premium digital experiences.",
                 color: "from-yellow-400 to-orange-500",
