@@ -3,512 +3,380 @@
 import { motion } from "framer-motion";
 
 import {
-  Globe,
-  Code2,
-  Smartphone,
-  ShoppingCart,
-  Search,
-  Workflow,
+  Instagram,
+  Linkedin,
+  Twitter,
   ArrowRight,
-  Sparkles,
+  Moon,
 } from "lucide-react";
 
-export default function PortfolioWebsite() {
+export default function MarkitStylePortfolio() {
 
   const services = [
     {
+      title: "Social Media Management",
+      subtitle: "Instagram, LinkedIn and more",
+      desc: "Amplify your social media impact through expert management services and growth strategies.",
+    },
+
+    {
       title: "Website Development",
-      desc: "Modern and responsive business websites built for conversions.",
-      icon: <Code2 size={34} />,
-    },
-
-    {
-      title: "App Development",
-      desc: "Custom mobile and web applications for startups and businesses.",
-      icon: <Smartphone size={34} />,
-    },
-
-    {
-      title: "Digital Marketing",
-      desc: "Growth-focused marketing strategies for better reach and sales.",
-      icon: <Globe size={34} />,
+      subtitle: "Modern websites for brands",
+      desc: "Premium responsive websites designed for business trust and conversions.",
     },
 
     {
       title: "SEO Optimization",
-      desc: "Improve rankings, visibility and organic business traffic.",
-      icon: <Search size={34} />,
+      subtitle: "Improve online visibility",
+      desc: "Boost search rankings and attract more organic business traffic.",
+    },
+  ];
+
+  const portfolio = [
+    {
+      title: "Business Landing Page",
+      category: "WEBSITE",
     },
 
     {
-      title: "E-Commerce",
-      desc: "Store setup, optimization and management for online businesses.",
-      icon: <ShoppingCart size={34} />,
+      title: "Modern SaaS UI",
+      category: "UI/UX",
     },
 
     {
-      title: "System Integration",
-      desc: "Integrating APIs, payment systems and automation workflows.",
-      icon: <Workflow size={34} />,
+      title: "Marketing Dashboard",
+      category: "DASHBOARD",
+    },
+
+    {
+      title: "E-Commerce Design",
+      category: "ECOMMERCE",
+    },
+
+    {
+      title: "Portfolio Website",
+      category: "WEB DESIGN",
+    },
+
+    {
+      title: "SEO Analytics UI",
+      category: "SEO",
     },
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-hidden relative font-sans">
+    <div className="bg-[#f3efea] min-h-screen overflow-hidden text-black font-sans">
 
-      {/* Animated Background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden">
+      {/* Floating Dots */}
+      <div className="fixed inset-0 pointer-events-none opacity-70">
 
-        <motion.div
-          animate={{
-            x: [0, 100, -100, 0],
-            y: [0, -60, 60, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-3xl"
-        />
+        <div className="absolute top-10 left-10 flex flex-col gap-2">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="w-2 h-2 rounded-full border border-black"
+            />
+          ))}
+        </div>
 
-        <motion.div
-          animate={{
-            x: [0, -120, 120, 0],
-            y: [0, 100, -100, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-purple-500/20 rounded-full blur-3xl"
-        />
+        <div className="absolute bottom-10 right-10 flex flex-col gap-2">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="w-2 h-2 rounded-full border border-black"
+            />
+          ))}
+        </div>
 
       </div>
 
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-xl">
+      <header className="px-6 md:px-12 py-8">
 
-        <div className="flex items-center justify-between px-6 md:px-16 py-5">
+        <div className="flex items-center justify-between">
 
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
             className="flex items-center gap-4"
           >
 
-            <motion.div
-              animate={{
-                rotate: 360,
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 p-[2px] shadow-[0_0_30px_rgba(34,211,238,0.5)]"
-            >
+            <div className="w-14 h-14 border-[3px] border-[#5b6cff] rounded-xl flex items-center justify-center">
 
-              <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+              <div className="w-8 h-8 border-[3px] border-[#5b6cff] rotate-45" />
 
-                <motion.span
-                  animate={{
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                  }}
-                  className="font-bold text-xl"
-                >
-                  A
-                </motion.span>
-
-              </div>
-
-            </motion.div>
+            </div>
 
             <div>
 
-              <h1 className="text-2xl md:text-3xl font-black tracking-wide">
-                Aneesh
+              <h1 className="text-4xl font-black text-[#5b6cff]">
+                AneeshUp
               </h1>
-
-              <p className="text-xs text-cyan-400 tracking-[0.3em] uppercase">
-                Digital Solutions
-              </p>
 
             </div>
 
           </motion.div>
 
-          {/* Nav */}
-          <nav className="hidden md:flex items-center gap-8 text-white/70">
-
-            <a href="#services" className="hover:text-cyan-400 transition">
-              Services
-            </a>
-
-            <a href="#team" className="hover:text-cyan-400 transition">
-              Team
-            </a>
-
-            <a href="#contact" className="hover:text-cyan-400 transition">
-              Contact
-            </a>
-
-          </nav>
+          <Moon size={32} />
 
         </div>
 
       </header>
 
-      {/* Hero Section */}
-      <section className="relative px-6 md:px-16 pt-24 pb-32 overflow-hidden">
+      {/* Hero */}
+      <section className="px-6 md:px-12 pt-10 pb-28">
 
-        {/* Grid */}
-        <div className="absolute inset-0 opacity-[0.04]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          {/* Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+          >
 
-            <defs>
+            <p className="uppercase tracking-[0.2em] text-sm font-bold mb-6">
+              HELLO WORLD,
+              <span className="text-[#5b6cff] ml-2">
+                WE ARE
+              </span>
+            </p>
 
-              <pattern
-                id="grid"
-                width="40"
-                height="40"
-                patternUnits="userSpaceOnUse"
+            <h1 className="text-6xl md:text-8xl font-black leading-none mb-6 tracking-tight text-[#5b6cff] drop-shadow-[4px_4px_0px_black]">
+
+              ANEESHUP
+
+            </h1>
+
+            <h2 className="text-3xl md:text-4xl italic font-bold mb-10">
+              A Digital Marketing Agency
+            </h2>
+
+            <p className="text-black/60 text-xl leading-relaxed max-w-xl mb-10">
+
+              We are a team of enthusiastic individuals who help
+              brands grow by unleashing the potential of modern
+              digital marketing and websites.
+
+            </p>
+
+            {/* Socials */}
+         {/* Socials */}
+<div className="flex items-center gap-6 mb-12">
+
+  <div className="w-12 h-12 rounded-full border-[3px] border-black flex items-center justify-center text-xl font-black hover:bg-black hover:text-white transition">
+    I
+  </div>
+
+  <div className="w-12 h-12 rounded-full border-[3px] border-black flex items-center justify-center text-xl font-black hover:bg-black hover:text-white transition">
+    L
+  </div>
+
+  <div className="w-12 h-12 rounded-full border-[3px] border-black flex items-center justify-center text-xl font-black hover:bg-black hover:text-white transition">
+    T
+  </div>
+
+</div>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6">
+
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                }}
+                className="px-10 py-5 rounded-full border-[3px] border-black bg-white text-lg font-bold shadow-[6px_6px_0px_black]"
               >
 
-                <path
-                  d="M 40 0 L 0 0 0 40"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="0.5"
-                />
+                CONTACT US
 
-              </pattern>
+              </motion.button>
 
-            </defs>
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                }}
+                className="text-lg font-bold flex items-center gap-3"
+              >
 
-            <rect width="100%" height="100%" fill="url(#grid)" />
+                DOWNLOAD BROCHURE
 
-          </svg>
+                <ArrowRight size={22} />
 
-        </div>
+              </motion.button>
 
-        {/* Floating Orbs */}
-        <motion.div
-          animate={{
-            y: [0, -30, 0],
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-          }}
-          className="absolute top-20 right-10 w-72 h-72 bg-cyan-500/20 blur-3xl rounded-full"
-        />
+            </div>
 
-        <motion.div
-          animate={{
-            y: [0, 40, 0],
-            x: [0, -30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-          }}
-          className="absolute bottom-10 left-10 w-80 h-80 bg-purple-500/20 blur-3xl rounded-full"
-        />
+          </motion.div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Right Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="relative flex justify-center"
+          >
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Circle */}
+            <div className="w-[500px] h-[500px] rounded-full bg-[#6d7df6] relative flex items-center justify-center">
 
-            {/* Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -80 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-            >
-
+              {/* Rocket */}
               <motion.div
                 animate={{
-                  y: [0, -6, 0],
+                  y: [0, -20, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                }}
+                className="text-[180px]"
+              >
+                🚀
+              </motion.div>
+
+              {/* Floating Icons */}
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
                 }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8 backdrop-blur-xl"
+                className="absolute top-10 left-10 text-6xl"
               >
-
-                <Sparkles size={16} />
-
-                Trusted Digital Solutions For Modern Businesses
-
+                💬
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-black leading-tight mb-8">
-
-                Helping Businesses
-
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
-
-                  Grow Online
-
-                </span>
-
-              </h1>
-
-              <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
-
-                I build modern websites, scalable applications,
-                SEO systems and digital growth solutions that help
-                businesses attract customers and grow faster online.
-
-              </p>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-5 mb-12">
-
-                <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    y: -5,
-                  }}
-                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center justify-center gap-2"
-                >
-
-                  View My Work
-
-                  <ArrowRight size={18} />
-
-                </motion.button>
-
-                <motion.button
-                  whileHover={{
-                    scale: 1.05,
-                    y: -5,
-                  }}
-                  className="px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/10 backdrop-blur-xl"
-                >
-
-                  Book A Consultation
-
-                </motion.button>
-
-              </div>
-
-              {/* Reviews */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-12"
+                animate={{
+                  y: [0, 15, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                }}
+                className="absolute bottom-20 left-10 text-6xl"
               >
-
-                {[
-                  {
-                    initials: "RK",
-                    name: "Rahul Kumar",
-                    stars: "★★★★★",
-                    review: "Very professional website and fast delivery.",
-                    color: "from-cyan-400 to-blue-500",
-                  },
-
-                  {
-                    initials: "AP",
-                    name: "Amit Patel",
-                    stars: "★★★★☆",
-                    review: "SEO and marketing service was excellent.",
-                    color: "from-purple-400 to-pink-500",
-                  },
-
-                  {
-                    initials: "VS",
-                    name: "Vikash Singh",
-                    stars: "★★★★★",
-                    review: "Amazing communication and premium work.",
-                    color: "from-green-400 to-emerald-500",
-                  },
-
-                  {
-                    initials: "SN",
-                    name: "Sandeep Nair",
-                    stars: "★★★★★",
-                    review: "Modern design improved my business trust.",
-                    color: "from-orange-400 to-red-500",
-                  },
-
-                  {
-                    initials: "MJ",
-                    name: "Manish Joshi",
-                    stars: "★★★★☆",
-                    review: "Professional support throughout project.",
-                    color: "from-yellow-400 to-amber-500",
-                  },
-                ].map((item, index) => (
-
-                  <motion.div
-                    key={index}
-                    whileHover={{ y: -5 }}
-                    className="p-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl"
-                  >
-
-                    <div className="flex items-center gap-4 mb-4">
-
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center font-bold text-black`}>
-                        {item.initials}
-                      </div>
-
-                      <div>
-
-                        <h4 className="font-semibold">
-                          {item.name}
-                        </h4>
-
-                        <div className="flex text-yellow-400 text-sm">
-                          {item.stars}
-                        </div>
-
-                      </div>
-
-                    </div>
-
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      “{item.review}”
-                    </p>
-
-                  </motion.div>
-
-                ))}
-
+                ▶️
               </motion.div>
-
-            </motion.div>
-
-            {/* Right Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 80 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-            >
 
               <motion.div
                 animate={{
                   y: [0, -15, 0],
                 }}
                 transition={{
-                  duration: 5,
+                  duration: 4,
                   repeat: Infinity,
                 }}
-                className="rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-2xl p-8 shadow-[0_0_60px_rgba(34,211,238,0.15)]"
+                className="absolute top-20 right-20 text-6xl"
               >
-
-                <div className="flex items-center gap-2 mb-8">
-
-                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
-
-                </div>
-
-                <div className="space-y-6">
-
-                  <div className="p-6 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/20">
-
-                    <div className="flex items-center justify-between mb-5">
-
-                      <h3 className="text-xl font-bold">
-                        Business Growth
-                      </h3>
-
-                      <Globe className="text-cyan-300" />
-
-                    </div>
-
-                    <div className="w-full h-3 rounded-full bg-white/10 overflow-hidden">
-
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: "85%" }}
-                        transition={{
-                          duration: 2,
-                        }}
-                        className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
-                      />
-
-                    </div>
-
-                  </div>
-
-                </div>
-
+                😂
               </motion.div>
 
-            </motion.div>
+              <motion.div
+                animate={{
+                  y: [0, 12, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                }}
+                className="absolute bottom-16 right-10 text-6xl"
+              >
+                ❤️
+              </motion.div>
 
-          </div>
+            </div>
+
+            {/* Stats */}
+            <div className="absolute bottom-10 left-0 px-8 py-5 bg-white rounded-full border-[3px] border-black shadow-[5px_5px_0px_black]">
+
+              <div className="flex items-center gap-5">
+
+                <h3 className="text-5xl font-black">
+                  30+
+                </h3>
+
+                <div>
+
+                  <p className="text-[#5b6cff] font-bold">
+                    HAPPY
+                  </p>
+
+                  <p className="font-bold">
+                    CLIENTS
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div className="absolute bottom-0 right-0 px-8 py-5 bg-white rounded-full border-[3px] border-black shadow-[5px_5px_0px_black]">
+
+              <div className="flex items-center gap-5">
+
+                <h3 className="text-5xl font-black">
+                  999+
+                </h3>
+
+                <div>
+
+                  <p className="font-bold">
+                    PROJECTS
+                  </p>
+
+                  <p className="text-[#5b6cff] font-bold">
+                    COMPLETED
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
 
         </div>
 
       </section>
 
       {/* Services */}
-      <section
-        id="services"
-        className="px-6 md:px-16 py-24 border-t border-white/10"
-      >
+      <section className="px-6 md:px-12 py-28">
 
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
+        <div className="max-w-7xl mx-auto">
 
-          <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-7xl font-black text-center mb-20">
+            OUR SERVICES
+          </h2>
 
-            <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
-              Services
-            </p>
-
-            <h2 className="text-4xl md:text-5xl font-bold">
-              What I Can Do For You
-            </h2>
-
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
 
             {services.map((service, index) => (
 
               <motion.div
                 key={index}
                 whileHover={{
-                  scale: 1.05,
                   y: -10,
                 }}
-                className="group p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/10 transition duration-500 backdrop-blur-xl hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]"
+                className="bg-[#f8f5f1] rounded-[40px] p-10 shadow-[6px_6px_0px_black] border-[3px] border-black"
               >
 
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-purple-500/20 flex items-center justify-center text-cyan-300 mb-6 group-hover:scale-110 transition">
-
-                  {service.icon}
-
-                </div>
-
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-3xl font-black mb-10 uppercase">
                   {service.title}
                 </h3>
 
-                <p className="text-white/70 leading-relaxed">
+                <h4 className="text-2xl font-bold mb-8">
+                  {service.subtitle}
+                </h4>
+
+                <p className="text-black/60 text-lg leading-relaxed">
                   {service.desc}
                 </p>
 
@@ -518,105 +386,80 @@ export default function PortfolioWebsite() {
 
           </div>
 
-        </motion.div>
+        </div>
 
       </section>
 
-      {/* Team Section */}
-      <section
-        id="team"
-        className="px-6 md:px-16 py-24 border-t border-white/10"
-      >
+      {/* Portfolio */}
+      <section className="px-6 md:px-12 py-28">
 
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
+        <div className="max-w-7xl mx-auto">
 
-          <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-7xl font-black text-center mb-16">
+            PORTFOLIO
+          </h2>
 
-            <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm mb-4">
-              Our Team
-            </p>
+          {/* Categories */}
+          <div className="flex flex-wrap justify-center gap-10 mb-20 font-bold">
 
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              Meet The Team
-            </h2>
+            <button className="text-[#5b6cff] border-b-4 border-[#5b6cff] pb-2">
+              ALL
+            </button>
 
-            <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              A passionate digital team focused on building modern
-              business solutions and premium online experiences.
-            </p>
+            <button>
+              WEBSITES
+            </button>
+
+            <button>
+              DASHBOARDS
+            </button>
+
+            <button>
+              UI/UX
+            </button>
 
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Portfolio Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {[
-              {
-                initial: "A",
-                name: "Aneesh Kumar",
-                role: "Founder & Developer",
-                desc: "Focused on websites and digital systems.",
-                color: "from-cyan-400 to-blue-500",
-              },
-
-              {
-                initial: "R",
-                name: "Rahul Sharma",
-                role: "SEO Specialist",
-                desc: "Improving search visibility and growth.",
-                color: "from-purple-400 to-pink-500",
-              },
-
-              {
-                initial: "V",
-                name: "Ajay singh",
-                role: "Marketing Manager",
-                desc: "Managing branding and digital campaigns.",
-                color: "from-green-400 to-emerald-500",
-              },
-
-              {
-                initial: "A",
-                name: "Amit Patel",
-                role: "UI/UX Designer",
-                desc: "Designing premium digital experiences.",
-                color: "from-yellow-400 to-orange-500",
-              },
-            ].map((member, index) => (
+            {portfolio.map((item, index) => (
 
               <motion.div
                 key={index}
                 whileHover={{
                   y: -10,
-                  scale: 1.03,
                 }}
-                className="group p-6 rounded-[32px] bg-white/5 border border-white/10 backdrop-blur-xl hover:border-cyan-400/30 transition duration-500"
+                className="bg-[#f8f5f1] rounded-[35px] overflow-hidden border-[3px] border-black shadow-[6px_6px_0px_black]"
               >
 
-                <div className={`w-24 h-24 rounded-full bg-gradient-to-r ${member.color} p-[2px] mx-auto mb-6`}>
+                {/* Image */}
+                <div className="h-64 bg-gradient-to-br from-[#6d7df6] to-[#9f8cff] flex items-center justify-center text-7xl">
 
-                  <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-3xl font-black">
-                    {member.initial}
-                  </div>
+                  💻
 
                 </div>
 
-                <h3 className="text-2xl font-bold text-center mb-2">
-                  {member.name}
-                </h3>
+                {/* Content */}
+                <div className="p-8">
 
-                <p className="text-cyan-400 text-center mb-5">
-                  {member.role}
-                </p>
+                  <p className="text-[#5b6cff] font-bold text-sm mb-3 uppercase">
+                    {item.category}
+                  </p>
 
-                <p className="text-white/60 text-sm text-center leading-relaxed">
-                  {member.desc}
-                </p>
+                  <h3 className="text-3xl font-black mb-6">
+                    {item.title}
+                  </h3>
+
+                  <button className="font-bold flex items-center gap-3">
+
+                    See Project
+
+                    <ArrowRight size={18} />
+
+                  </button>
+
+                </div>
 
               </motion.div>
 
@@ -624,14 +467,24 @@ export default function PortfolioWebsite() {
 
           </div>
 
-        </motion.div>
+        </div>
 
       </section>
 
       {/* Footer */}
-      <footer className="px-6 md:px-16 py-10 border-t border-white/10 text-center text-white/50 text-sm">
+      <footer className="px-6 md:px-12 py-14 border-t-[3px] border-black">
 
-        © 2026 Aneesh Kumar Maury — All Rights Reserved.
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+          <h3 className="text-3xl font-black text-[#5b6cff]">
+            AneeshUp
+          </h3>
+
+          <p className="font-bold">
+            © 2026 Aneesh Kumar Maury
+          </p>
+
+        </div>
 
       </footer>
 
