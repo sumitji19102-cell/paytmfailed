@@ -4,256 +4,250 @@ import { motion } from "framer-motion";
 
 import {
   ArrowRight,
-  Moon,
+  Play,
   Star,
+  CheckCircle2,
+  TrendingUp,
   ShieldCheck,
-  Rocket,
   Sparkles,
+  Instagram,
+  BarChart3,
+  Users,
+  MessageCircle,
 } from "lucide-react";
 
 import { FiInstagram } from "react-icons/fi";
-import { RiFacebookBoxLine } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
+import { RiFacebookBoxLine } from "react-icons/ri";
 
-export default function PremiumPortfolio() {
+export default function SocialMediaManagerWebsite() {
 
   const services = [
     {
-      title: "Social Media Management",
-      subtitle: "Instagram Growth & Branding",
-      desc: "Grow your audience with strategic content, reels, branding and engagement systems.",
-      icon: "📱",
+      title: "Instagram Management",
+      desc: "Content strategy, reels planning, engagement growth and audience building.",
+      icon: <FiInstagram />,
     },
 
     {
-      title: "Website Development",
-      subtitle: "Modern Responsive Websites",
-      desc: "Premium websites designed for trust, speed and high conversions.",
-      icon: "💻",
+      title: "Content Creation",
+      desc: "Modern content ideas, carousel design, reels concepts and captions.",
+      icon: <Sparkles size={28} />,
     },
 
     {
-      title: "SEO Optimization",
-      subtitle: "Rank Higher on Google",
-      desc: "Boost your website visibility and generate organic traffic for your business.",
-      icon: "🚀",
+      title: "Social Media Ads",
+      desc: "Meta ads and high-converting campaigns for business growth.",
+      icon: <TrendingUp size={28} />,
     },
 
     {
-      title: "Thumbnail Design",
-      subtitle: "YouTube CTR Boost",
-      desc: "High-converting YouTube thumbnails designed to increase clicks and views.",
-      icon: "🎯",
+      title: "Brand Strategy",
+      desc: "Build a premium and recognizable online brand identity.",
+      icon: <ShieldCheck size={28} />,
     },
 
     {
-      title: "App Development",
-      subtitle: "Android & Web Apps",
-      desc: "Scalable and modern applications built for startups and businesses.",
-      icon: "📲",
+      title: "Analytics & Reports",
+      desc: "Track engagement, reach, audience growth and campaign performance.",
+      icon: <BarChart3 size={28} />,
     },
 
     {
-      title: "UI/UX Design",
-      subtitle: "Creative User Interfaces",
-      desc: "Beautiful user experiences with modern layouts and premium aesthetics.",
-      icon: "🎨",
+      title: "Community Management",
+      desc: "Manage DMs, comments and audience engagement professionally.",
+      icon: <Users size={28} />,
     },
   ];
 
-  const portfolio = [
+  const stats = [
     {
-      title: "YouTube Thumbnail Design",
-      category: "YOUTUBE",
-      image:
-        "https://i.ibb.co/wF78GCD4/lxnsc91-Yi-I-HD.jpg",
+      number: "100+",
+      text: "Projects Completed",
     },
 
     {
-      title: "Instagram Theme Page",
-      category: "INSTAGRAM",
-      image:
-        "https://i.ibb.co/Kc55QcsH/Screenshot-20260528-171029-Instagram.png",
+      number: "80+",
+      text: "Happy Clients",
     },
 
     {
-      title: "Marketing Dashboard",
-      category: "DASHBOARD",
-      emoji: "📊",
+      number: "10M+",
+      text: "Social Reach",
     },
 
     {
-      title: "E-Commerce Design",
-      category: "ECOMMERCE",
-      emoji: "🛒",
+      number: "5+",
+      text: "Years Experience",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Rahul Sharma",
+      role: "Startup Founder",
+      review:
+        "Amazing social media management and very professional communication.",
     },
 
     {
-      title: "Portfolio Website",
-      category: "WEB DESIGN",
-      emoji: "🎨",
+      name: "Priya Verma",
+      role: "Fashion Brand Owner",
+      review:
+        "My Instagram engagement increased massively after working together.",
     },
 
     {
-      title: "SEO Analytics UI",
-      category: "SEO",
-      emoji: "📈",
+      name: "Amit Patel",
+      role: "Business Coach",
+      review:
+        "Premium quality content strategy and smooth execution.",
     },
   ];
 
   return (
-    <div className="bg-[#f8f6f2] min-h-screen overflow-x-hidden text-[#111111] font-sans relative">
+    <div className="bg-[#f9f7f2] text-[#111111] overflow-x-hidden">
 
-      {/* SOFT BACKGROUND */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] bg-[#ffd7c8] blur-[140px] rounded-full opacity-50" />
+      {/* BACKGROUND */}
+      <div className="fixed inset-0 -z-10">
 
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-[#d8d4ff] blur-[140px] rounded-full opacity-50" />
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#ffe0d6] blur-[140px] rounded-full opacity-70" />
 
-      {/* GRID */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#ddd6ff] blur-[140px] rounded-full opacity-70" />
 
-      {/* FLOATING ICONS */}
-      <motion.div
-        animate={{
-          y: [0, -20, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-        }}
-        className="absolute top-[15%] right-[10%] text-5xl"
-      >
-        ✨
-      </motion.div>
-
-      <motion.div
-        animate={{
-          y: [0, 20, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-        }}
-        className="absolute bottom-[15%] left-[10%] text-5xl"
-      >
-        🚀
-      </motion.div>
+      </div>
 
       {/* NAVBAR */}
-      <header className="px-5 sm:px-6 md:px-12 py-6 md:py-8 relative z-10">
+      <header className="px-5 sm:px-6 md:px-12 py-6">
 
-        <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
 
           {/* LOGO */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-4"
           >
 
-            <motion.div
-              whileHover={{
-                rotate: 180,
-                scale: 1.1,
-              }}
-              className="w-14 h-14 rounded-2xl bg-white border border-black/10 shadow-xl flex items-center justify-center"
-            >
+            <div className="w-14 h-14 rounded-2xl bg-white shadow-xl flex items-center justify-center">
 
-              <Rocket size={28} className="text-[#6d5dfc]" />
+              <Instagram
+                size={28}
+                className="text-[#6d5dfc]"
+              />
 
-            </motion.div>
+            </div>
 
             <div>
 
-              <h1 className="text-3xl md:text-4xl font-black text-[#6d5dfc]">
-                AneeshUp
+              <h1 className="text-3xl font-black text-[#6d5dfc]">
+                Aneesh Media
               </h1>
 
-              <p className="text-sm font-semibold text-black/50">
-                Creative Digital Agency
+              <p className="text-sm text-black/50 font-semibold">
+                Social Media Manager
               </p>
 
             </div>
 
           </motion.div>
 
-          {/* THEME ICON */}
-          <motion.div
-            whileHover={{
-              rotate: 180,
-            }}
-            className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center"
-          >
-            <Moon size={22} />
-          </motion.div>
+          {/* BUTTON */}
+          <button className="hidden md:flex px-6 py-3 rounded-full bg-[#6d5dfc] text-white font-bold shadow-xl">
+            Contact Us
+          </button>
 
         </div>
 
       </header>
 
-      {/* HERO */}
-      <section className="relative px-5 sm:px-6 md:px-12 pt-10 pb-32 overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="px-5 sm:px-6 md:px-12 py-20">
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
           {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
 
             {/* BADGE */}
-            <motion.div
-              animate={{
-                y: [0, -5, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-              }}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white shadow-lg mb-8"
-            >
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white shadow-lg mb-8">
 
-              <ShieldCheck size={18} className="text-[#6d5dfc]" />
+              <CheckCircle2
+                size={18}
+                className="text-[#6d5dfc]"
+              />
 
-              Trusted By 80+ Clients
+              Trusted by Brands Worldwide
 
-            </motion.div>
+            </div>
 
-            <p className="uppercase tracking-[0.3em] text-sm font-bold mb-5 text-[#6d5dfc]">
-              DIGITAL AGENCY
-            </p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1] mb-8">
 
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-[0.95] mb-8">
-
-              BUILD
+              We Grow
               <br />
-              YOUR
+
+              <span className="text-[#6d5dfc]">
+                Brands on
+              </span>
+
               <br />
-              BRAND.
+
+              Social Media.
 
             </h1>
 
             <p className="text-lg md:text-xl text-black/60 leading-relaxed mb-10 max-w-xl">
 
-              Premium websites, SEO systems, branding,
-              social media growth and modern digital
-              experiences for businesses worldwide.
+              We help businesses and creators grow through
+              strategic content, Instagram management,
+              branding, paid ads and audience engagement.
 
             </p>
 
-            {/* SOCIAL ICONS */}
-            <div className="flex items-center gap-5 mb-10">
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-5 mb-12">
 
-              {[FiInstagram, RiFacebookBoxLine, FaLinkedin].map(
-                (Icon, i) => (
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                }}
+                className="px-8 py-4 rounded-full bg-[#6d5dfc] text-white font-black shadow-[0_15px_40px_rgba(109,93,252,0.35)]"
+              >
+
+                Start Growing
+
+              </motion.button>
+
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                }}
+                className="px-8 py-4 rounded-full bg-white shadow-xl font-black flex items-center gap-3"
+              >
+
+                Watch Portfolio
+
+                <Play size={18} />
+
+              </motion.button>
+
+            </div>
+
+            {/* SOCIALS */}
+            <div className="flex items-center gap-5">
+
+              {[FiInstagram, FaLinkedin, RiFacebookBoxLine].map(
+                (Icon, index) => (
 
                   <motion.div
-                    key={i}
+                    key={index}
                     whileHover={{
-                      scale: 1.1,
                       y: -5,
+                      scale: 1.1,
                     }}
                     className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-xl hover:bg-[#6d5dfc] hover:text-white transition"
                   >
@@ -267,35 +261,6 @@ export default function PremiumPortfolio() {
 
             </div>
 
-            {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-5">
-
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                }}
-                className="px-8 py-4 rounded-full bg-[#6d5dfc] text-white font-black shadow-[0_10px_30px_rgba(109,93,252,0.35)]"
-              >
-
-                CONTACT US
-
-              </motion.button>
-
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                }}
-                className="px-8 py-4 rounded-full bg-white shadow-lg font-black flex items-center gap-3"
-              >
-
-                VIEW PROJECTS
-
-                <ArrowRight size={20} />
-
-              </motion.button>
-
-            </div>
-
           </motion.div>
 
           {/* RIGHT */}
@@ -306,22 +271,8 @@ export default function PremiumPortfolio() {
             className="relative flex justify-center"
           >
 
-            <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] rounded-full bg-gradient-to-br from-[#6d5dfc] to-[#9f8cff] flex items-center justify-center relative shadow-[0_20px_60px_rgba(109,93,252,0.35)]">
-
-              {/* DECORATIONS */}
-              <motion.div
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-                className="absolute top-10 right-10"
-              >
-                <Sparkles size={35} className="text-white" />
-              </motion.div>
+            {/* MAIN CIRCLE */}
+            <div className="w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] rounded-full bg-gradient-to-br from-[#6d5dfc] to-[#9f8cff] flex items-center justify-center relative shadow-[0_30px_80px_rgba(109,93,252,0.35)]">
 
               <motion.div
                 animate={{
@@ -333,37 +284,103 @@ export default function PremiumPortfolio() {
                 }}
                 className="text-[120px] md:text-[180px]"
               >
-                🚀
+                📱
               </motion.div>
 
-              {/* FLOAT CARD */}
-              <div className="absolute bottom-6 left-6 bg-white rounded-2xl px-5 py-4 shadow-xl">
+              {/* FLOATING CARDS */}
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                }}
+                className="absolute top-10 left-0 bg-white rounded-2xl px-5 py-4 shadow-xl"
+              >
 
                 <div className="flex items-center gap-3">
 
-                  <div className="w-12 h-12 rounded-full bg-[#6d5dfc] flex items-center justify-center text-white">
-                    ⭐
-                  </div>
+                  <TrendingUp className="text-[#6d5dfc]" />
 
                   <div>
 
                     <h3 className="font-black text-xl">
-                      100+
+                      +250%
                     </h3>
 
                     <p className="text-sm text-black/60">
-                      Projects Done
+                      Engagement
                     </p>
 
                   </div>
 
                 </div>
 
-              </div>
+              </motion.div>
+
+              <motion.div
+                animate={{
+                  y: [0, 10, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                }}
+                className="absolute bottom-10 right-0 bg-white rounded-2xl px-5 py-4 shadow-xl"
+              >
+
+                <div className="flex items-center gap-3">
+
+                  <MessageCircle className="text-[#6d5dfc]" />
+
+                  <div>
+
+                    <h3 className="font-black text-xl">
+                      10M+
+                    </h3>
+
+                    <p className="text-sm text-black/60">
+                      Reach Generated
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </motion.div>
 
             </div>
 
           </motion.div>
+
+        </div>
+
+      </section>
+
+      {/* STATS */}
+      <section className="px-5 sm:px-6 md:px-12 py-10">
+
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+
+          {stats.map((item, index) => (
+
+            <div
+              key={index}
+              className="bg-white rounded-[30px] p-8 shadow-xl text-center"
+            >
+
+              <h2 className="text-4xl md:text-5xl font-black text-[#6d5dfc] mb-3">
+                {item.number}
+              </h2>
+
+              <p className="text-black/60 font-semibold">
+                {item.text}
+              </p>
+
+            </div>
+
+          ))}
 
         </div>
 
@@ -381,7 +398,7 @@ export default function PremiumPortfolio() {
             </p>
 
             <h2 className="text-5xl md:text-7xl font-black">
-              WHAT WE PROVIDE
+              What We Do
             </h2>
 
           </div>
@@ -395,27 +412,32 @@ export default function PremiumPortfolio() {
                 whileHover={{
                   y: -10,
                 }}
-                className="group bg-white rounded-[35px] p-8 shadow-xl hover:shadow-[0_20px_50px_rgba(109,93,252,0.2)] transition-all duration-500"
+                className="group bg-white rounded-[35px] p-8 shadow-xl hover:shadow-[0_25px_60px_rgba(109,93,252,0.15)] transition-all duration-500"
               >
 
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#6d5dfc] to-[#9f8cff] flex items-center justify-center text-4xl mb-8 shadow-lg">
+                {/* ICON */}
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#6d5dfc] to-[#9f8cff] flex items-center justify-center text-white text-4xl shadow-lg mb-8">
 
                   {service.icon}
 
                 </div>
 
+                {/* TITLE */}
                 <h3 className="text-3xl font-black mb-4">
                   {service.title}
                 </h3>
 
+                {/* SUBTITLE */}
                 <p className="text-[#6d5dfc] font-bold mb-4">
                   {service.subtitle}
                 </p>
 
+                {/* DESCRIPTION */}
                 <p className="text-black/60 leading-relaxed mb-8">
                   {service.desc}
                 </p>
 
+                {/* BUTTON */}
                 <button className="flex items-center gap-3 font-black text-[#6d5dfc]">
 
                   Learn More
@@ -434,7 +456,148 @@ export default function PremiumPortfolio() {
 
       </section>
 
-      {/* PORTFOLIO */}
+      {/* WHY CHOOSE US */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
+
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+          {/* LEFT */}
+          <div>
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#6d5dfc] mb-4">
+              WHY US
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-black mb-8">
+              We Create
+              <br />
+              Results.
+            </h2>
+
+            <p className="text-lg text-black/60 leading-relaxed mb-10">
+
+              We focus on strategy, creativity and growth.
+              Our goal is to help businesses stand out
+              online with powerful content and branding.
+
+            </p>
+
+            <div className="space-y-5">
+
+              {[
+                "Premium Content Strategy",
+                "High Engagement Growth",
+                "Modern Branding Solutions",
+                "Consistent Content Planning",
+              ].map((item, index) => (
+
+                <div
+                  key={index}
+                  className="flex items-center gap-4"
+                >
+
+                  <CheckCircle2 className="text-[#6d5dfc]" />
+
+                  <p className="font-semibold text-lg">
+                    {item}
+                  </p>
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* RIGHT */}
+          <div className="grid grid-cols-2 gap-6">
+
+            <div className="bg-white rounded-[35px] p-8 shadow-xl h-60 flex flex-col justify-between">
+
+              <Sparkles
+                size={40}
+                className="text-[#6d5dfc]"
+              />
+
+              <div>
+
+                <h3 className="text-4xl font-black mb-2">
+                  Creative
+                </h3>
+
+                <p className="text-black/60">
+                  Unique social media ideas.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="bg-[#6d5dfc] text-white rounded-[35px] p-8 shadow-xl h-72 flex flex-col justify-between mt-10">
+
+              <TrendingUp size={40} />
+
+              <div>
+
+                <h3 className="text-4xl font-black mb-2">
+                  Growth
+                </h3>
+
+                <p className="text-white/70">
+                  Audience & engagement boost.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="bg-[#111111] text-white rounded-[35px] p-8 shadow-xl h-72 flex flex-col justify-between">
+
+              <Users size={40} />
+
+              <div>
+
+                <h3 className="text-4xl font-black mb-2">
+                  Community
+                </h3>
+
+                <p className="text-white/70">
+                  Build loyal audience relationships.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="bg-white rounded-[35px] p-8 shadow-xl h-60 flex flex-col justify-between mt-10">
+
+              <BarChart3
+                size={40}
+                className="text-[#6d5dfc]"
+              />
+
+              <div>
+
+                <h3 className="text-4xl font-black mb-2">
+                  Analytics
+                </h3>
+
+                <p className="text-black/60">
+                  Performance-based optimization.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* TESTIMONIALS */}
       <section className="px-5 sm:px-6 md:px-12 py-24">
 
         <div className="max-w-7xl mx-auto">
@@ -442,79 +605,58 @@ export default function PremiumPortfolio() {
           <div className="text-center mb-20">
 
             <p className="uppercase tracking-[0.3em] text-sm font-bold text-[#6d5dfc] mb-4">
-              PORTFOLIO
+              TESTIMONIALS
             </p>
 
             <h2 className="text-5xl md:text-7xl font-black">
-              RECENT WORK
+              Client Reviews
             </h2>
 
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
 
-            {portfolio.map((item, index) => (
+            {testimonials.map((item, index) => (
 
-              <motion.div
+              <div
                 key={index}
-                whileHover={{
-                  y: -10,
-                }}
-                className="group bg-white rounded-[35px] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(109,93,252,0.2)] transition-all duration-500"
+                className="bg-white rounded-[35px] p-8 shadow-xl"
               >
 
-                <div className="h-64 overflow-hidden relative">
+                {/* STARS */}
+                <div className="flex gap-1 mb-6">
 
-                  {item.image ? (
-
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-
-                  ) : (
-
-                    <div className="h-full bg-gradient-to-br from-[#6d5dfc] to-[#9f8cff] flex items-center justify-center text-7xl">
-
-                      {item.emoji}
-
-                    </div>
-
-                  )}
-
-                </div>
-
-                <div className="p-8">
-
-                  <div className="flex items-center gap-2 mb-3">
+                  {[...Array(5)].map((_, i) => (
 
                     <Star
-                      size={15}
+                      key={i}
+                      size={18}
                       className="fill-[#6d5dfc] text-[#6d5dfc]"
                     />
 
-                    <p className="text-[#6d5dfc] font-bold text-sm">
-                      {item.category}
-                    </p>
-
-                  </div>
-
-                  <h3 className="text-3xl font-black mb-5">
-                    {item.title}
-                  </h3>
-
-                  <button className="flex items-center gap-3 font-bold text-[#6d5dfc]">
-
-                    See Project
-
-                    <ArrowRight size={18} />
-
-                  </button>
+                  ))}
 
                 </div>
 
-              </motion.div>
+                {/* REVIEW */}
+                <p className="text-black/60 leading-relaxed mb-8">
+                  {item.review}
+                </p>
+
+                {/* USER */}
+                <div>
+
+                  <h3 className="font-black text-xl">
+                    {item.name}
+                  </h3>
+
+                  <p className="text-[#6d5dfc] font-semibold">
+                    {item.role}
+                  </p>
+
+                </div>
+
+              </div>
 
             ))}
 
@@ -524,6 +666,79 @@ export default function PremiumPortfolio() {
 
       </section>
 
+      {/* CTA */}
+      <section className="px-5 sm:px-6 md:px-12 py-24">
+
+        <div className="max-w-6xl mx-auto bg-gradient-to-r from-[#6d5dfc] to-[#9f8cff] rounded-[40px] p-10 md:p-20 text-center text-white shadow-[0_30px_80px_rgba(109,93,252,0.3)]">
+
+          <h2 className="text-5xl md:text-7xl font-black mb-8">
+            Ready to Grow
+            <br />
+            Your Brand?
+          </h2>
+
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+
+            Let's build your online presence with strategic
+            social media management and modern branding.
+
+          </p>
+
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+            }}
+            className="px-10 py-5 rounded-full bg-white text-[#6d5dfc] font-black shadow-xl"
+          >
+
+            Book a Free Call
+
+          </motion.button>
+
+        </div>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer className="px-5 sm:px-6 md:px-12 py-10">
+
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+          <div>
+
+            <h3 className="text-3xl font-black text-[#6d5dfc]">
+              Aneesh Media
+            </h3>
+
+            <p className="text-black/50 mt-2">
+              Social Media Management Agency
+            </p>
+
+          </div>
+
+          <div className="flex items-center gap-5">
+
+            {[FiInstagram, FaLinkedin, RiFacebookBoxLine].map(
+              (Icon, index) => (
+
+                <div
+                  key={index}
+                  className="w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-xl hover:bg-[#6d5dfc] hover:text-white transition cursor-pointer"
+                >
+
+                  <Icon />
+
+                </div>
+
+              )
+            )}
+
+          </div>
+
+        </div>
+
+      </footer>
+
     </div>
   );
-}
+                }
