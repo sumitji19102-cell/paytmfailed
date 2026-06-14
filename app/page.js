@@ -118,7 +118,7 @@ export default function Home() {
   <div className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
 
     <img
-      src="https://i.ibb.co/MDYGfTNV/photo-2026-06-14-14-32-13.jpg"
+      src="https://i.ibb.co/3YGvs8DG/Chat-GPT-Image-Jun-14-2026-02-53-17-PM.png"
       alt="Instagram Growth Result"
       className="w-full object-cover"
     />
